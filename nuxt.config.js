@@ -25,10 +25,6 @@ module.exports = {
     ],
 		script: [
 			{src:'/js/jquery.min.js'},
-			
-/*			{src:'/js/bootstrap.min.js'},
- 			{src:'/js/ias.js'},
-			{src:'/js/main.js'} */
 		],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

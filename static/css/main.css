@@ -2511,3 +2511,8 @@ animation: rotation 2s linear infinite;
     margin-bottom: 15px;
     padding: 8px;
 }
+
+body{
+	background-color: #f6f6f6!important; 
+    font-size: 14px !important;
+}

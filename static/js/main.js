@@ -422,9 +422,9 @@ $('[data-event="rewards"]').on('click', function() {
 $('[data-event="rewards-close"]').on('click', function() {
 	$('.rewards-popover-mask, .rewards-popover').fadeOut()
 })
-
+/* 
 if($('#SOHUCS').length) $('#SOHUCS').before('<span id="comments"></span>')
-
+ */
 /*$('.plinks a').each(function(){
     var imgSrc = $(this).attr('href')+'/favicon.ico'
     $(this).prepend( '<img src="'+imgSrc+'">' )
@@ -510,7 +510,7 @@ function postlike(e) {
 		}
 	}
 	$.ajax({
-		url: ADD_NICE,
+		url: 'https://qsong.fun/article/postAddNice',
 		type: 'POST',
 		dataType: 'json',
 		headers: {

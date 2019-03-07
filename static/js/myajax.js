@@ -132,15 +132,15 @@ var mNetUtils = {
 				item.publishTime = item.publishTime.split(" ")[0];
 				item.articleImg = mNetUtils.getImgUrl(item.articleImg);
 				if (item.typeName == "组图") {
-					item.href = "ztdetail.html?id=" + item.articleId;
+					item.href = "/picture/detail/" + item.articleId;
 				} else if (item.typeName == "动图") {
-					item.href = "gifdetail.html?id=" + item.articleId;
+					item.href = "/gif/detail/" + item.articleId;
 				} else if (item.typeName == "视频") {
-					item.href = "videodetail.html?id=" + item.articleId;
+					item.href = "/video/detail/" + item.articleId;
 				} else if (item.typeName == "公告") {
-					item.href = "noticedetail.html?id=" + item.articleId;
+					item.href = "/notice/detail/" + item.articleId;
 				} else {
-					item.href = "dzdetail.html?id=" + item.articleId;
+					item.href = "/jokes/detail/" + item.articleId;
 				}
 				items.push(item);
 			});
@@ -159,7 +159,7 @@ var mNetUtils = {
 			arrlist.forEach(function(item) {
 				item.publishTime = item.publishTime.split(" ")[0];
 				item.articleImg = mNetUtils.getImgUrl(item.articleImg);
-				item.href = "videodetail.html?id=" + item.articleId;
+				item.href = "/video/detail/" + item.articleId;
 				items.push(item);
 			});
 		}
@@ -173,7 +173,7 @@ var mNetUtils = {
 			pn--; */
 			return [];
 		}
-		arrlist[0].href = "dzdetail.html?id=" + arrlist[0].articleId
+		arrlist[0].href = "/jokes/detail/" + arrlist[0].articleId
 		return arrlist;
 	},
 	
@@ -197,15 +197,15 @@ var mNetUtils = {
 					item.articleUrl = mNetUtils.getImgUrl(item.articleUrl);
 				}
 				if (item.typeName == "组图") {
-					item.href = "ztdetail.html?id=" + item.articleId;
+					item.href = "/picture/detail/" + item.articleId;
 				} else if (item.typeName == "动图") {
 					item.href = "/gif/detail/" + item.articleId;
 				} else if (item.typeName == "视频") {
-					item.href = "videodetail.html?id=" + item.articleId;
+					item.href = "/video/detail/" + item.articleId;
 				} else if (item.typeName == "公告") {
-					item.href = "noticedetail.html?id=" + item.articleId;
+					item.href = "/notice/detail/" + item.articleId;
 				} else {
-					item.href = "dzdetail.html?id=" + item.articleId;
+					item.href = "/jokes/detail/" + item.articleId;
 				}
 				items.push(item);
 			});
@@ -239,15 +239,15 @@ var mNetUtils = {
 				item.publishTime = item.publishTime.split(" ")[0];
 				item.articleImg = mNetUtils.getImgUrl(item.articleImg);
 				if (item.typeName == "组图") {
-					item.href = "ztdetail.html?id=" + item.articleId;
+					item.href = "/picture/detail/" + item.articleId;
 				} else if (item.typeName == "动图") {
-					item.href = "gifdetail.html?id=" + item.articleId;
+					item.href = "/gif/detail/" + item.articleId;
 				} else if (item.typeName == "视频") {
-					item.href = "videodetail.html?id=" + item.articleId;
+					item.href = "/video/detail/" + item.articleId;
 				} else if (item.typeName == "公告") {
-					item.href = "noticedetail.html?id=" + item.articleId;
+					item.href = "/notice/detail/" + item.articleId;
 				} else {
-					item.href = "dzdetail.html?id=" + item.articleId;
+					item.href = "/jokes/detail/" + item.articleId;
 				}
 				items.push(item);
 			});
@@ -262,15 +262,14 @@ var mNetUtils = {
 		if (data.article.articleUrl) {
 			data.article.articleUrl = mNetUtils.getImgUrl(data.article.articleUrl);
 		}
-		//	data.article.href = data.article.type+"detail.html?id=" + data.article.articleId;
 		data.article.publishTime = data.article.publishTime.split(" ")[0];
 		if (data.lastArticle.articleId) {
 			data.lastArticle.publishTime = data.lastArticle.publishTime.split(" ")[0];
-			data.lastArticle.href = data.lastArticle.type + "detail.html?id=" + data.lastArticle.articleId;
+			data.lastArticle.href = "/"+mNetUtils.getRoute(data.lastArticle.type) + "/detail/"  + data.lastArticle.articleId;
 		}
 		if (data.nextArticle.articleId) {
 			data.nextArticle.publishTime = data.nextArticle.publishTime.split(" ")[0];
-			data.nextArticle.href = data.nextArticle.type + "detail.html?id=" + data.nextArticle.articleId;
+			data.nextArticle.href = "/"+mNetUtils.getRoute(data.nextArticle.type) + "/detail/" + data.nextArticle.articleId;
 		}
 		return data;
 	},
@@ -280,17 +279,30 @@ var mNetUtils = {
 			//alert("没了更多了");
 			return {};
 		}
-		//	data.article.href = data.article.type+"detail.html?id=" + data.article.articleId;
 		data.article.publishTime = data.article.publishTime.split(" ")[0];
 		if (data.lastArticle.articleId) {
 			data.lastArticle.publishTime = data.lastArticle.publishTime.split(" ")[0];
-			data.lastArticle.href = data.lastArticle.type + "detail.html?id=" + data.lastArticle.articleId;
+			data.lastArticle.href = "/"+mNetUtils.getRoute(data.lastArticle.type) + "/detail/" + data.lastArticle.articleId;
 		}
 		if (data.nextArticle.articleId) {
 			data.nextArticle.publishTime = data.nextArticle.publishTime.split(" ")[0];
-			data.nextArticle.href = data.nextArticle.type + "detail.html?id=" + data.nextArticle.articleId;
+			data.nextArticle.href = "/"+mNetUtils.getRoute(data.nextArticle.type) + "/detail/" + data.nextArticle.articleId;
 		}
 		return data;
+	},
+	
+	getRoute: function(type){
+		if(type == "gif"){
+			return "gif";
+		}else if(type == "zt"){
+			return "picture";
+		}else if(type == "dz"){
+			return "jokes";
+		}else if(type == "video"){
+			return "video";
+		}else{
+			return "notice";
+		}
 	},
 
 	getImgUrl: function(url) {

@@ -10,19 +10,19 @@
 						<a href="/"><i class="fa fa-home"></i> 首页</a>
 					</li>
 					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
-						<a href="video"><i class="fa fa-youtube-play"></i> 视频</a>
+						<a href="/video"><i class="fa fa-youtube-play"></i> 视频</a>
 					</li>
 					<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20">
-						<a href="gif"><i class="fa fa-file-movie-o"></i> 动图</a>
+						<a href="/gif"><i class="fa fa-file-movie-o"></i> 动图</a>
 					</li>
 					<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18">
-						<a href="picture"><i class="fa fa-image"></i> 组图</a>
+						<a href="/picture"><i class="fa fa-image"></i> 组图</a>
 					</li>
 					<li id="menu-item-13" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13 current-menu-item">
-						<a href="jokes"><i class="fa fa-flag"></i> 段子</a>
+						<a href="/jokes"><i class="fa fa-flag"></i> 段子</a>
 					</li>
 					<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17">
-						<a href="welfare"><i class="fa fa-fire"></i> 福利</a>
+						<a href="/welfare"><i class="fa fa-fire"></i> 福利</a>
 					</li>
 					<li class="navto-search">
 						<a to="javascript:;" class="search-show active"><i class="fa fa-search"></i></a>

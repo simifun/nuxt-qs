@@ -12,10 +12,10 @@
 					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
 						<a href="/video"><i class="fa fa-youtube-play"></i> 视频</a>
 					</li>
-					<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20 current-menu-item">
+					<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20">
 						<a href="/gif"><i class="fa fa-file-movie-o"></i> 动图</a>
 					</li>
-					<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18">
+					<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18 current-menu-item">
 						<a href="/picture"><i class="fa fa-image"></i> 组图</a>
 					</li>
 					<li id="menu-item-13" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13">
@@ -65,25 +65,19 @@
 						<div class="container gallery-container">
 							<div class="tz-gallery">
 								<div class="row">
-									<div class="thumbnail">
-										<div id="myImg" class="lightbox">
-											<a v-bind:data-caption="nowItem.text">
-												<img :src="nowItem.imgId" alt="loading...">
-											</a>
-										</div>
-										<div class="caption">
-											<p>{{nowItem.text}}</p>
+									<div class="col-sm-6 col-md-4" v-for="item in items">
+										<div class="thumbnail">
+											<div id="SpinImage" class="lightbox">
+												<a v-bind:href="item.imgId" v-bind:data-caption="item.text">
+													<img :src="item.imgId" v-bind:alt="item.text">
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</article>
-					<div class="article-paging">
-						<ul class="pagination">
-							<li v-on:click="onchange(index,$event)" v-for="(item,index) in items"><a>{{index+1}}</a></li>
-						</ul>
-					</div>
 					<div class="post-actions">
 						<a href="javascript:;" onclick="postlike(event)" class="post-like action action-like" v-bind:pid="article.articleId">
 							<i class="fa fa-thumbs-o-up"></i>赞(<span>{{article.niceNum}}</span>)
@@ -155,6 +149,7 @@
 				</li>
 			</ul>
 		</div>
+		<script src="/js/baguetteBox.min.js"></script>
 	</div>
 </template>
 
@@ -170,7 +165,7 @@
 				{ rel: 'modulepreload', as: 'script', href: '/js/share.js' },
 				{ rel: 'stylesheet', type: 'text/css', href: '/css/share.css' },
 				{ rel: 'stylesheet', type: 'text/css', href: '/css/baguetteBox.min.css' },
-				{ rel: 'stylesheet', type: 'text/css', href: '/css/gallery-clean.css' },
+				{ rel: 'stylesheet', type: 'text/css', href: '/css/gallery-grid.css' },
 			  ]
 			}
 		},
@@ -201,27 +196,12 @@
 						$this.removeClass("refreshRotate");
 					}, 1000);
 				}
-			},
-			onchange(index,e) {
-				var that = $(e.currentTarget).children(":first");
-				var parent = $(e.currentTarget).parent();
-				parent.find('li').each(function() {
-						$(this).children(":first").removeClass("mactive");
-				});
-				that.addClass("mactive");
-				console.log(that.html());
-				this.nowItem = this.items[index];
-				var myImg = document.getElementById("myImg");
-				myImg.innerHTML = '\
-						<a data-caption="'+ this.nowItem.text + '">\
-							<img src="'+ this.nowItem.imgId + '" alt="loading...">\
-						</a>'
 			}
 		},
 		async asyncData ({ app,params}) {
 			var detailParams = {
 				articleId: params.id,
-				type: 'gif',
+				type: 'zt',
 			}
 			let [data,randData,nData] = await Promise.all([
 				app.$axios.$get('/article/getArticleDtl',{params:detailParams}),
@@ -257,24 +237,17 @@
 						bdCustomStyle: "/css/share.css"
 					}]
 				};{0[(document.getElementsByTagName("head")[0] || body).appendChild(document.createElement("script")).src =
-					"/js/share.js?cdnversion=" + ~(-new Date() / 36e5)];}
-					
-					//点击放大图片，modal方式
-					$(".lightbox").on("click", "img", function () {
-						$('#modal-img').modal('toggle');
-						document.getElementById("imgId").src = this.src;
-					});
-			
-					$('#modal-img').on('show.bs.modal', function () {
-						$(this).css('display', 'flex');
-					})
+					"/js/share.js?cdnversion=" + ~(-new Date() / 36e5)];};
+					setTimeout(function() {
+						baguetteBox.run('.tz-gallery',{
+							async:true
+						});
+					}, 500);
 		 	});
 		 }, 
 	}
 </script>
 
 <style>
-	.thumbnail a>img{height: 250px!important;}
-	.article-header {margin-bottom: -5px!important;}
-	.mactive{background: #ddd!important;}
+
 </style>

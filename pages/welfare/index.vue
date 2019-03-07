@@ -1,8 +1,8 @@
-<template>
+/<template>
 	<div id="body" class="m-excerpt-cat site-layout-2 rollbar-m-on">
 		<header class="header">
 			<div class="container">
-				<h1 class="logo"><a href="https://www.qsong.fun/" title="轻松一下"><img src="/img/logo.png" alt="轻松一下-抛开那烦恼">轻松一下</a></h1>
+				<h1 class="logo"><nuxt-link to="/" title="轻松一下"><img src="/img/logo.png" alt="轻松一下-抛开那烦恼">轻松一下</nuxt-link></h1>
 				<div class="brand">QSONG.FUN
 					<br>有事没事轻松一下</div>
 				<ul class="site-nav site-navbar">
@@ -10,22 +10,22 @@
 						<a href="/"><i class="fa fa-home"></i> 首页</a>
 					</li>
 					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
-						<a href="video"><i class="fa fa-youtube-play"></i> 视频</a>
+						<a href="/video"><i class="fa fa-youtube-play"></i> 视频</a>
 					</li>
 					<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20">
-						<a href="gif"><i class="fa fa-file-movie-o"></i> 动图</a>
+						<a href="/gif"><i class="fa fa-file-movie-o"></i> 动图</a>
 					</li>
 					<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18">
-						<a href="picture"><i class="fa fa-image"></i> 组图</a>
+						<a href="/picture"><i class="fa fa-image"></i> 组图</a>
 					</li>
 					<li id="menu-item-13" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13">
-						<a href="jokes"><i class="fa fa-flag"></i> 段子</a>
+						<a href="/jokes"><i class="fa fa-flag"></i> 段子</a>
 					</li>
-					<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17">
-						<a href="welfare"><i class="fa fa-fire"></i> 福利</a>
+					<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17 current-menu-item">
+						<a href="/welfare"><i class="fa fa-fire"></i> 福利</a>
 					</li>
 					<li class="navto-search">
-						<a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a>
+						<a to="javascript:;" class="search-show active"><i class="fa fa-search"></i></a>
 					</li>
 				</ul>
 				<i class="fa fa-bars m-icon-nav"></i>
@@ -40,7 +40,6 @@
 							</ul>
 						</li>
 					</ul>
-
 				</div>
 			</div>
 		</header>
@@ -53,86 +52,37 @@
 		<section class="container">
 			<div class="content-wrap">
 				<div class="content">
-					<!-- 首页滚动公告 -->
-					<div id="focusslide" class="carousel slide" data-ride="carousel" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-						<ol class="carousel-indicators">
-							<li data-target="#focusslide" data-slide-to="0" class=""></li>
-							<li data-target="#focusslide" data-slide-to="1" class="active"></li>
-							<li data-target="#focusslide" data-slide-to="2" class=""></li>
-						</ol>
-						<div class="carousel-inner" role="listbox">
-							<div class="item">
-								<a target="_blank" href="https://qsong.fun"><img src="/img/Banner_woniu.jpg"></a>
-							</div>
-							<div class="item active">
-								<a target="_blank" href="https://qsong.fun"><img src="/img/Banner_guangyingshuihua.jpg"></a>
-							</div>
-							<div class="item">
-								<a target="_blank" href="https://qsong.fun"><img src="/img/Banner_weimei.jpg"></a>
+						<div class="catleader">
+							<h1>福利</h1>
+							<div class="catleader-desc">妹子图均来自gank.io！如果生活没有妹子，便只剩苟且！</div>
+						</div>
+						<div class="welfare-content">
+							<div class="twoRankedBox">
+								<ul class="BoxLeft">
+	
+								</ul>
+	
+								<ul class="BoxRight">
+	
+								</ul>
 							</div>
 						</div>
-						<a class="left carousel-control" href="#focusslide" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-						<a class="right carousel-control" href="#focusslide" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
 					</div>
-					<div id="hotdz">
-						<article class="excerpt-minic excerpt-minic-index" v-for="item in dzItems">
-							<h2><a target="_blank" class="red" href="https://qsong.fun/dzmain.html">【最新段子】</a> <a :href="item.href" v-cloak>{{item.articleTitle}}</a></h2>
-							<p class="note myellipsis-3" v-cloak>{{item.articleContent}}</p>
-						</article>
-					</div>
-					<!--热门文章排行-->
-					<div class="most-comment-posts">
-						<div class="title">
-							<h3>热门TOP5</h3>
-						</div>
-						<div id="hotlist" class="mpc-bg">
-							<ul>
-								<li v-for="(item,index) in hotlist">
-									<p class="text-muted"><span class="post-comments" v-cloak>&nbsp;阅读 ({{item.readTime}})</span></p><span
-									 v-bind:class="item.classname" v-cloak>{{index+1}}</span>
-									<a target="_blank" :href="item.href" v-bind:title="item.articleTitle" v-cloak>{{item.articleTitle}}</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="title">
-						<h3>最新发布</h3>
-					</div>
-					<div id="uptodatelist">
-						<article class="excerpt excerpt-1" v-for="(item,index) in uptodatelist">
-							<a target="_blank" class="focus" :href="item.href"><img :src="item.articleImg" class="thumb" style="display: inline;"></a>
-							<header>
-								<a class="cat" v-cloak>{{item.typeName}}<i></i></a>
-								<h2><a target="_blank" :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2>
-							</header>
-							<p class="meta"><time v-cloak><i class="fa fa-clock-o"></i>{{item.publishTime}}</time><span class="pv" v-cloak><i
-									 class="fa fa-eye"></i>阅读({{item.readTime}})</span>
-								<!--<a class="pc" href="https://qsong.fun/754.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a>-->
-								<a href="javascript:" onclick="postlike(event)" class="post-like" v-bind:pid="item.articleId"><i class="fa fa-thumbs-o-up"></i>赞(<span
-									 v-cloak>{{item.niceNum}}</span>)</a>
-							</p>
-							<p class="note myellipsis-3" v-html="item.articleContent">{{item.articleContent}}</p>
-						</article>
-					</div>
-					<div id="loader" class="ias_loader" style="display: none;">
-						<div class="pagination-loading"><img src="/img/loading.gif"></div>
-					</div>
-					<div id="nomore" class="ias_loader" style="display: none;">
-						<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>没有更多啦！</strong></div>
-					</div>
+				<div id="loader" class="ias_loader" style="display: none;">
+					<div class="pagination-loading"><img src="/img/loading.gif"></div>
+				</div>
+				<div id="nomore" class="ias_loader" style="display: none;">
+					<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>没有更多啦！</strong></div>
 				</div>
 			</div>
 			<div id="sidebarInfo" class="sidebar">
 				<div class="widget widget-tops">
 					<ul class="widget-nav">
-						<!--首页公告栏添加推荐与联系我们模块-->
 						<li>网站公告</li>
 						<li class="active">小程序版</li>
 						<li>联系我们</li>
 					</ul>
-
 					<ul class="widget-navcontent">
-						<!--首页公告栏添加推荐与联系我们模块-->
 						<li class="item item-01">
 							<ul>
 								<li v-for="item in noticeList"><time>{{item.publishTime}}</time>
@@ -153,17 +103,11 @@
 						<li class="item item-03">
 							<ul>
 								<h2>如有疑问,请留言或邮箱咨询 <br>xiaoqs0707@qq.com</h2>
-								<a href="https://qsong.fun/" target="" class="btn btn-danger">给我留言</a>
-								<a href="http://qsong.fun/" target="" class="btn btn-default">联系我们</a>
+								<nuxt-link to="/" target="" class="btn btn-danger">给我留言</nuxt-link>
+								<nuxt-link to="/" target="" class="btn btn-default">联系我们</nuxt-link>
 							</ul>
 						</li>
 					</ul>
-				</div>
-				<div class="widget widget_ui_asb" style="top: 0px;">
-					<div class="item" v-for="item in videoItems">
-						<a :href="item.href" target="_blank"><img :src="item.articleImg"></a>
-						<div class="videoTitle"><i class="fa fa-play-circle-o"></i>{{item.articleTitle}}</div>
-					</div>
 				</div>
 				<div class="widget widget_ui_posts">
 					<h3 @click="refRandList($event)">随机推荐&nbsp;&nbsp;<i class="fa fa-refresh"></i></h3>
@@ -174,25 +118,23 @@
 						</li>
 					</ul>
 				</div>
-				<div id="" class="widget widget_ui_statistics" style="top: 0px;">
-					<h3>网站统计</h3>
-					<ul>
-						<li v-cloak><strong>文章总数：</strong>{{countInfo.c_all}}</li>
-						<li v-cloak><strong>视频总数：</strong>{{countInfo.c_video}}</li>
-						<li v-cloak><strong>段子总数：</strong>{{countInfo.c_dz}}</li>
-						<li v-cloak><strong>动图总数：</strong>{{countInfo.c_gif}}</li>
-						<li v-cloak><strong>组图总数：</strong>{{countInfo.c_zt}}</li>
-						<li v-cloak><strong>获赞总数：</strong>{{countInfo.c_nice}}</li>
-						<li v-cloak><strong>最后更新：</strong>{{countInfo.publish_time}}</li>
-					</ul>
-				</div>
 			</div>
 		</section>
-
+		
+		<div class="modal fade" id="modal-img" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body" style="text-align:center;padding:0">
+						<img id="imgId" style="max-width:100%;" src="">
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<footer class="footer">
 			<div class="container">
 				<p>©&nbsp;2017&nbsp;-&nbsp;2018&nbsp;&nbsp;</p>
-				<a href="https://qsong.fun/">轻松一下</a> &nbsp;|
+				<nuxt-link to="/">轻松一下</nuxt-link> &nbsp;|
 				<a href="http://www.miitbeian.gov.cn/">&nbsp;豫ICP备18031952号</a>
 			</div>
 		</footer>
@@ -225,14 +167,16 @@
 				ps: 10,
 				pn: 1,
 				isloading: false,
-				hotlist: [],
+				items: [],
 				randList: [],
-				noticeList: [],
-				countInfo: {},
-				videoItems: [],
-				dzItems: [],
-				uptodatelist: []
 			};
+		},
+		head () {
+			return {
+			  link: [
+					{ rel: 'stylesheet', type: 'text/css', href: '/css/gankio.css' },
+			  ]
+			}
 		},
 		methods:{
 			refRandList (e) {
@@ -249,50 +193,54 @@
 					}, 1000);
 				}
 			},
-			pullupRefresh(){
-				$('#loader').attr('style','');
-				this.isloading = true;
-				var that = this;
-				var params = {
-					ps: this.ps,
-					pn: ++this.pn,
-				};
-				this.$axios.$get(mNetUtils.ARTICLE_LIST,{params}).then((res) => {
-					that.isloading = false;
-					$('#loader').attr('style','display: none;');
-					if(res.success === true) {
-						that.uptodatelist = that.uptodatelist.concat(mNetUtils.convert(res.data.list));
+			initView(data) {
+				for (var i = 0; i < data.length; i++) {
+					var chtml = '<li><p class="img-detail" data-src="' + data[i].url + '"><a ><img class="" src="' + data[i].url +
+						'"></a></p></li>';
+					if ($('.BoxLeft').height() < $('.BoxRight').height()) {
+						$('.BoxLeft').append(chtml);
 					} else {
-						$('#nomore').attr('style','');
+						$('.BoxRight').append(chtml);
 					}
-				});
+				}
+			},
+			pullupRefresh(){
+				if($('#nomore').is(':hidden')){
+					$('#loader').attr('style','');
+					this.isloading = true;
+					var that = this;
+					var params = {
+						ps: this.ps,
+						pn: ++this.pn,
+					};
+					this.$axios.$get(mNetUtils.WELFARE_LIST + params.ps + "/" + params.pn).then((res) => {
+						that.isloading = false;
+						$('#loader').attr('style','display: none;');
+						if(!res.results) {
+							$('#nomore').attr('style','');
+						}else{
+							that.initView(res.results);
+						}
+					});
+				}
 			}
 		},
 		async asyncData ({ app,params}) {
-			let [hotData, updateData,randData,vData,DzData,nData,cData] = await Promise.all([
-			  app.$axios.$get('/article/getArticleList?ps=5&pn=1&sort=read'),
-			  app.$axios.$get('/article/getArticleList?ps=10&pn=1'),
-			  app.$axios.$get('/article/getRandArticle'),
-			  app.$axios.$get('/article/getArticleList?ps=1&pn=1&type=video&sort=read'),
-			  app.$axios.$get('/article/getArticleList?ps=1&pn=1&type=dz'),
-			  app.$axios.$get('/article/getArticleList?ps=5&pn=1&type=notice'),
-			  app.$axios.$get(mNetUtils.GET_COUNTINFO),
+			let [randData,nData] = await Promise.all([
+				app.$axios.$get('/article/getRandArticle'),
+				app.$axios.$get('/article/getArticleList?ps=5&pn=1&type=notice'),
 			])
 			return {
-				hotlist: mNetUtils.convertHotList(hotData.data.list),
-				uptodatelist: mNetUtils.convert(updateData.data.list),
 				randList: mNetUtils.convertRandList(randData.data.list),
-				videoItems: mNetUtils.convertHotVideo(vData.data.list),
-				dzItems: mNetUtils.convertDz(DzData.data.list),
 				noticeList: mNetUtils.convertHotList(nData.data.list),
-				countInfo: mNetUtils.convertCount(cData.data.countInfo)
 			}
 		 },
 		 mounted() {
 			let that = this;
+			this.$axios.$get(mNetUtils.WELFARE_LIST +"10/1").then((res) => {
+				that.initView(res.results);
+			});
 		 	this.$nextTick(function(){
-				this.$nuxt.$loading.start();
-
 		 		$(window).scroll(function() {
 		 			var wScrollY = window.scrollY; // 当前滚动条top值  
 		 			var wInnerH = window.innerHeight; // 设备窗口的高度
@@ -301,6 +249,16 @@
 		 				that.pullupRefresh();
 		 			}
 		 		});
+				
+				//点击放大图片，modal方式
+				$(".twoRankedBox").on("click", "img", function() {
+					document.getElementById("imgId").src = this.src;
+					$('#modal-img').modal('toggle');
+				});
+	
+				$('#modal-img').on('show.bs.modal', function() {
+					$(this).css('display', 'flex');
+				});
 		 	})
 		 }, 
 	}
