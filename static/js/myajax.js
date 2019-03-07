@@ -151,8 +151,8 @@ var mNetUtils = {
 	convertHotVideo: function(arrlist) {
 		var items = [];
 		if (arrlist == null) {
-			alert("没了更多了");
-			pn--;
+			/* alert("没了更多了");
+			pn--; */
 			return [];
 		}
 		if (arrlist.length > 0) {
@@ -169,12 +169,19 @@ var mNetUtils = {
 	convertDz: function(arrlist) {
 		var items = [];
 		if (arrlist == null) {
-			alert("没了更多了");
-			pn--;
+			/* alert("没了更多了");
+			pn--; */
 			return [];
 		}
 		arrlist[0].href = "dzdetail.html?id=" + arrlist[0].articleId
 		return arrlist;
+	},
+	
+	convertCount: function(data) {
+		var countInfo = {};
+		countInfo = data;
+		countInfo.publish_time = data.publish_time.split(" ")[0];
+		return countInfo;
 	},
 
 	convert: function(arrlist) {
@@ -192,7 +199,7 @@ var mNetUtils = {
 				if (item.typeName == "组图") {
 					item.href = "ztdetail.html?id=" + item.articleId;
 				} else if (item.typeName == "动图") {
-					item.href = "gifdetail.html?id=" + item.articleId;
+					item.href = "/gif/detail/" + item.articleId;
 				} else if (item.typeName == "视频") {
 					item.href = "videodetail.html?id=" + item.articleId;
 				} else if (item.typeName == "公告") {

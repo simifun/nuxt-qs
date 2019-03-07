@@ -2,11 +2,11 @@
 	<div id="body" class="m-excerpt-cat site-layout-2 rollbar-m-on">
 		<header class="header">
 			<div class="container">
-				<h1 class="logo"><nuxt-link to="/" title="轻松一下"><img src="/img/logo.png" alt="轻松一下-抛开那烦恼">轻松一下</nuxt-link></h1>
+				<h1 class="logo"><a href="https://www.qsong.fun/" title="轻松一下"><img src="/img/logo.png" alt="轻松一下-抛开那烦恼">轻松一下</a></h1>
 				<div class="brand">QSONG.FUN
 					<br>有事没事轻松一下</div>
 				<ul class="site-nav site-navbar">
-					<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-25">
+					<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-25">
 						<a href="/"><i class="fa fa-home"></i> 首页</a>
 					</li>
 					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
@@ -25,7 +25,7 @@
 						<a href="welfare"><i class="fa fa-fire"></i> 福利</a>
 					</li>
 					<li class="navto-search">
-						<a to="javascript:;" class="search-show active"><i class="fa fa-search"></i></a>
+						<a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a>
 					</li>
 				</ul>
 				<i class="fa fa-bars m-icon-nav"></i>
@@ -153,8 +153,8 @@
 						<li class="item item-03">
 							<ul>
 								<h2>如有疑问,请留言或邮箱咨询 <br>xiaoqs0707@qq.com</h2>
-								<nuxt-link to="/" target="" class="btn btn-danger">给我留言</nuxt-link>
-								<nuxt-link to="/" target="" class="btn btn-default">联系我们</nuxt-link>
+								<a href="https://qsong.fun/" target="" class="btn btn-danger">给我留言</a>
+								<a href="http://qsong.fun/" target="" class="btn btn-default">联系我们</a>
 							</ul>
 						</li>
 					</ul>
@@ -192,7 +192,7 @@
 		<footer class="footer">
 			<div class="container">
 				<p>©&nbsp;2017&nbsp;-&nbsp;2018&nbsp;&nbsp;</p>
-				<nuxt-link to="/">轻松一下</nuxt-link> &nbsp;|
+				<a href="https://qsong.fun/">轻松一下</a> &nbsp;|
 				<a href="http://www.miitbeian.gov.cn/">&nbsp;豫ICP备18031952号</a>
 			</div>
 		</footer>
@@ -291,6 +291,8 @@
 		 mounted() {
 			let that = this;
 		 	this.$nextTick(function(){
+				this.$nuxt.$loading.start();
+
 		 		$(window).scroll(function() {
 		 			var wScrollY = window.scrollY; // 当前滚动条top值  
 		 			var wInnerH = window.innerHeight; // 设备窗口的高度

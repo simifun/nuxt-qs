@@ -7,10 +7,10 @@
 					<br>有事没事轻松一下</div>
 				<ul class="site-nav site-navbar">
 					<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-25">
-						<a href="home.html"><i class="fa fa-home"></i> 首页</a>
+						<a href="/"><i class="fa fa-home"></i> 首页</a>
 					</li>
 					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
-						<a href="videomain.html"><i class="fa fa-youtube-play"></i> 视频</a>
+						<a href="video"><i class="fa fa-youtube-play"></i> 视频</a>
 					</li>
 					<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20">
 						<a href="gifmain.html"><i class="fa fa-file-movie-o"></i> 动图</a>
@@ -191,8 +191,7 @@
 
 		<footer class="footer">
 			<div class="container">
-				<p>© 2017 - 2018
-					<!--&copy; 2017-2018-->&nbsp;&nbsp;</p>
+				<p>©&nbsp;2017&nbsp;-&nbsp;2018&nbsp;&nbsp;</p>
 				<a href="https://qsong.fun/">轻松一下</a> &nbsp;|
 				<a href="http://www.miitbeian.gov.cn/">&nbsp;豫ICP备18031952号</a>
 			</div>
@@ -225,7 +224,7 @@
 			return {
 				ps: 10,
 				pn: 1,
-				loading: false,
+				isloading: false,
 				hotlist: [],
 				randList: [],
 				noticeList: [],
@@ -253,16 +252,16 @@
 			pullupRefresh(){
 				$('#loader').attr('style','');
 				this.isloading = true;
+				var that = this;
 				var params = {
 					ps: this.ps,
 					pn: ++this.pn,
 				};
 				this.$axios.$get(mNetUtils.ARTICLE_LIST,{params}).then((res) => {
-					this.isloading = false;
+					that.isloading = false;
 					$('#loader').attr('style','display: none;');
 					if(res.success === true) {
-						this.uptodatelist = this.uptodatelist.concat(mNetUtils.convert(res.data.list));
-						console.log(this.uptodatelist);
+						that.uptodatelist = that.uptodatelist.concat(mNetUtils.convert(res.data.list));
 					} else {
 						$('#nomore').attr('style','');
 					}
@@ -270,26 +269,36 @@
 			}
 		},
 		async asyncData ({ app,params}) {
-			let [request1Data, request2Data, request3Data] = await Promise.all([
+			let [hotData, updateData,randData,vData,DzData,nData,cData] = await Promise.all([
 			  app.$axios.$get('/article/getArticleList?ps=5&pn=1&sort=read'),
 			  app.$axios.$get('/article/getArticleList?ps=10&pn=1'),
 			  app.$axios.$get('/article/getRandArticle'),
+			  app.$axios.$get('/article/getArticleList?ps=1&pn=1&type=video&sort=read'),
+			  app.$axios.$get('/article/getArticleList?ps=1&pn=1&type=dz'),
+			  app.$axios.$get('/article/getArticleList?ps=5&pn=1&type=notice'),
+			  app.$axios.$get(mNetUtils.GET_COUNTINFO),
 			])
 			return {
-				hotlist: mNetUtils.convertHotList(request1Data.data.list),
-				uptodatelist: mNetUtils.convert(request2Data.data.list),
-				randList: mNetUtils.convertRandList(request3Data.data.list)
+				hotlist: mNetUtils.convertHotList(hotData.data.list),
+				uptodatelist: mNetUtils.convert(updateData.data.list),
+				randList: mNetUtils.convertRandList(randData.data.list),
+				videoItems: mNetUtils.convertHotVideo(vData.data.list),
+				dzItems: mNetUtils.convertDz(DzData.data.list),
+				noticeList: mNetUtils.convertHotList(nData.data.list),
+				countInfo: mNetUtils.convertCount(cData.data.countInfo)
 			}
 		 },
 		 mounted() {
 			let that = this;
 		 	this.$nextTick(function(){
+				this.$nuxt.$loading.start();
+
 		 		$(window).scroll(function() {
 		 			var wScrollY = window.scrollY; // 当前滚动条top值  
 		 			var wInnerH = window.innerHeight; // 设备窗口的高度
 		 			var bScrollH = document.body.scrollHeight; // body总高度   
-		 			if(!that.loading && wScrollY + wInnerH >= bScrollH - 10) {
-						console.log(that.loading)
+		 			if(!that.isloading && wScrollY + wInnerH >= bScrollH - 10) {
+						console.log(that.isloading)
 		 				that.pullupRefresh();
 		 			}
 		 		});
