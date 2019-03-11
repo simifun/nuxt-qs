@@ -54,8 +54,8 @@
 			<div class="content-wrap">
 				<div class="content">
 					<div class="catleader">
-						<h1>看动图</h1>
-						<div class="catleader-desc">自从GIF流行开来，一张图片也能携带更多了笑料啦！</div>
+						<h1>搜索结果</h1>
+						<div class="catleader-desc">本站采用全站搜索，如果在下面的列表中未找到您搜索的关键词，不妨点击看看详情。</div>
 					</div>
 					<div id='list'>
 						<article class="excerpt excerpt-1" v-for="(item,index) in items">
@@ -64,6 +64,7 @@
 								<a class="cat" v-cloak>{{item.typeName}}<i></i></a>
 								<h2><a target="_blank" :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2></header>
 							<p class="meta"><time v-cloak><i class="fa fa-clock-o"></i>{{item.publishTime}}</time><span class="pv" v-cloak><i class="fa fa-eye"></i>阅读({{item.readTime}})</span>
+								<!--<a class="pc" href="https://qsong.fun/754.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a>-->
 								<a href="javascript:;" onclick="postlike(event)" class="post-like" v-bind:pid="item.articleId"><i class="fa fa-thumbs-o-up"></i>赞(<span v-cloak>{{item.niceNum}}</span>)</a>
 							</p>
 							<p class="note myellipsis-3">{{item.articleContent}}</p>
@@ -178,32 +179,11 @@
 					}, 1000);
 				}
 			},
-			pullupRefresh(){
-				if($('#nomore').is(':visible')){
-					return;
-				}
-				$('#loader').attr('style','');
-				this.isloading = true;
-				var that = this;
-				var params = {
-					type: 'gif',
-					ps: this.ps,
-					pn: ++this.pn,
-				};
-				this.$axios.$get(mNetUtils.ARTICLE_LIST,{params}).then((res) => {
-					that.isloading = false;
-					$('#loader').attr('style','display: none;');
-					if(res.success === true) {
-						that.items = that.items.concat(mNetUtils.convert(res.data.list));
-					} else {
-						$('#nomore').attr('style','');
-					}
-				});
-			}
 		},
-		async asyncData ({ app,params}) {
+		async asyncData ({ app,params,query}) {
+			console.log(query); 
 			let [itemsData,randData,nData] = await Promise.all([
-				app.$axios.$get('/article/getArticleList?ps=10&pn=1&type=gif'),
+				app.$axios.$get(mNetUtils.ARTICLE_SEARCH+"?keywords=我"),
 				app.$axios.$get('/article/getRandArticle'),
 				app.$axios.$get('/article/getArticleList?ps=5&pn=1&type=notice'),
 			])
@@ -216,14 +196,7 @@
 		 mounted() {
 			let that = this;
 		 	this.$nextTick(function(){
-		 		$(window).scroll(function() {
-		 			var wScrollY = window.scrollY; // 当前滚动条top值  
-		 			var wInnerH = window.innerHeight; // 设备窗口的高度
-		 			var bScrollH = document.body.scrollHeight; // body总高度   
-		 			if(!that.isloading && wScrollY + wInnerH >= bScrollH - 10) {
-		 				that.pullupRefresh();
-		 			}
-		 		});
+		 		
 		 	})
 		 }, 
 	}
