@@ -45,8 +45,8 @@
 		</header>
 		<div class="site-search">
 			<div class="container">
-				<form method="get" class="site-search-form" action="searchresult.html"><input class="search-input" name="keywords"
-					 type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>
+				<form method="get" class="site-search-form" action="/result"><input class="search-input" name="keywords"
+					type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>
 			</div>
 		</div>
 		<section class="container">
@@ -54,7 +54,7 @@
 				<div class="content">
 					<div class="catleader">
 						<h1>看视频</h1>
-						<div class="catleader-desc">好像现在的年轻人闲来无事好像更喜欢看看视频呢！</div>
+						<div class="catleader-desc">现在的年轻人闲来无事好像更喜欢看看视频呢！</div>
 					</div>
 					<div id='list'>
 						<article class="excerpt excerpt-1" v-for="(item,index) in items">
@@ -214,6 +214,7 @@
 		 mounted() {
 			let that = this;
 		 	this.$nextTick(function(){
+				that.items = that.items.concat([]);
 		 		$(window).scroll(function() {
 		 			var wScrollY = window.scrollY; // 当前滚动条top值  
 		 			var wInnerH = window.innerHeight; // 设备窗口的高度

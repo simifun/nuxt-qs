@@ -141,7 +141,7 @@ if($('.sns-wechat').length) {
 		if(!$('#modal-wechat').length) {
 			$('body').append('\
                 <div class="modal fade" id="modal-wechat" tabindex="-1" role="dialog" aria-hidden="true">\
-                    <div class="modal-dialog" style="margin-top:200px;width:340px;">\
+                    <div class="modal-dialog" style="margin-top:130px;width:340px;">\
                         <div class="modal-content">\
                             <div class="modal-header">\
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\
@@ -380,9 +380,10 @@ if(_wid > 1024 && _sidebar.length) {
 			top: 0
 		})
 		sheight = rollFirst.height()
-
+		console.log("000")
 		for(var i = 1; i < jsui.roll.length; i++) {
 			var item = jsui.roll[i] - 1
+			console.log("111")
 			var current = _sidebar.find('.widget:eq(' + item + ')')
 			current.removeClass('affix').css({
 				top: 0
@@ -395,9 +396,10 @@ if(_wid > 1024 && _sidebar.length) {
 		rollFirst.css({
 			top: jsui.bd.hasClass('nav-fixed') ? h1 + 63 : h1
 		})
-
+console.log("222")
 		for(var i = 1; i < jsui.roll.length; i++) {
 			var item = jsui.roll[i] - 1
+			console.log("333")
 			var current = _sidebar.find('.widget:eq(' + item + ')')
 			current.addClass('affix').css({
 				top: jsui.bd.hasClass('nav-fixed') ? sheight + h2 + 63 : sheight + h2

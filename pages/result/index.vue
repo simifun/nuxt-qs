@@ -12,7 +12,7 @@
 					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
 						<a href="/video"><i class="fa fa-youtube-play"></i> 视频</a>
 					</li>
-					<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20 current-menu-item">
+					<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20">
 						<a href="/gif"><i class="fa fa-file-movie-o"></i> 动图</a>
 					</li>
 					<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18">
@@ -40,14 +40,13 @@
 							</ul>
 						</li>
 					</ul>
-
 				</div>
 			</div>
 		</header>
 		<div class="site-search">
 			<div class="container">
-				<form method="get" class="site-search-form" action="searchresult.html"><input class="search-input" name="keywords"
-					 type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>
+				<form method="get" class="site-search-form" action="/result"><input class="search-input" name="keywords"
+					type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>
 			</div>
 		</div>
 		<section class="container">
@@ -55,7 +54,7 @@
 				<div class="content">
 					<div class="catleader">
 						<h1>搜索结果</h1>
-						<div class="catleader-desc">本站采用全站搜索，如果在下面的列表中未找到您搜索的关键词，不妨点击看看详情。</div>
+						<div class="catleader-desc">本站采用全站搜索，如果下面列表中未出现您搜索的关键词，您可以点击查看详情。</div>
 					</div>
 					<div id='list'>
 						<article class="excerpt excerpt-1" v-for="(item,index) in items">
@@ -180,10 +179,9 @@
 				}
 			},
 		},
-		async asyncData ({ app,params,query}) {
-			console.log(query); 
+		async asyncData ({app,query}) {
 			let [itemsData,randData,nData] = await Promise.all([
-				app.$axios.$get(mNetUtils.ARTICLE_SEARCH+"?keywords=我"),
+				app.$axios.$get("/article/getSearchList?keywords="+encodeURIComponent(query.keywords)),
 				app.$axios.$get('/article/getRandArticle'),
 				app.$axios.$get('/article/getArticleList?ps=5&pn=1&type=notice'),
 			])
@@ -196,7 +194,7 @@
 		 mounted() {
 			let that = this;
 		 	this.$nextTick(function(){
-		 		
+		 		that.items = that.items.concat([]);
 		 	})
 		 }, 
 	}

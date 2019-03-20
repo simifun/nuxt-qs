@@ -69,12 +69,12 @@
 							<p class="note myellipsis-3">{{item.articleContent}}</p>
 						</article>
 					</div>
-				</div>
-				<div id="loader" class="ias_loader" style="display: none;">
-					<div class="pagination-loading"><img src="/img/loading.gif"></div>
-				</div>
-				<div id="nomore" class="ias_loader" style="display: none;">
-					<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>没有更多啦！</strong></div>
+					<div id="loader" class="ias_loader" style="display: none;">
+						<div class="pagination-loading"><img src="/img/loading.gif"></div>
+					</div>
+					<div id="nomore" class="ias_loader" style="display: none;">
+						<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>没有更多啦！</strong></div>
+					</div>
 				</div>
 			</div>
 			<div id="sidebarInfo" class="sidebar">
@@ -193,9 +193,9 @@
 				this.$axios.$get(mNetUtils.ARTICLE_LIST,{params}).then((res) => {
 					that.isloading = false;
 					$('#loader').attr('style','display: none;');
-					if(res.success === true) {
+					if(res.success === true && res.data.list != null) {
 						that.items = that.items.concat(mNetUtils.convert(res.data.list));
-					} else {
+					} else{
 						$('#nomore').attr('style','');
 					}
 				});
@@ -216,6 +216,7 @@
 		 mounted() {
 			let that = this;
 		 	this.$nextTick(function(){
+				that.items = that.items.concat([]);
 		 		$(window).scroll(function() {
 		 			var wScrollY = window.scrollY; // 当前滚动条top值  
 		 			var wInnerH = window.innerHeight; // 设备窗口的高度

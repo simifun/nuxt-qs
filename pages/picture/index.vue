@@ -45,8 +45,8 @@
 		</header>
 		<div class="site-search">
 			<div class="container">
-				<form method="get" class="site-search-form" action="searchresult.html"><input class="search-input" name="keywords"
-					 type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>
+				<form method="get" class="site-search-form" action="/result"><input class="search-input" name="keywords"
+					type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>
 			</div>
 		</div>
 		<section class="container">
@@ -193,10 +193,10 @@
 				this.$axios.$get(mNetUtils.ARTICLE_LIST,{params}).then((res) => {
 					that.isloading = false;
 					$('#loader').attr('style','display: none;');
-					if(!res.data.list) {
-					$('#nomore').attr('style','');
-					}else if(res.success === true) {
+					if(res.success === true && res.data.list != null) {
 						that.items = that.items.concat(mNetUtils.convert(res.data.list));
+					}else {
+						$('#nomore').attr('style','');
 					}
 				});
 			}
@@ -216,6 +216,7 @@
 		 mounted() {
 			let that = this;
 		 	this.$nextTick(function(){
+				that.items = that.items.concat([]);
 		 		$(window).scroll(function() {
 		 			var wScrollY = window.scrollY; // 当前滚动条top值  
 		 			var wInnerH = window.innerHeight; // 设备窗口的高度
