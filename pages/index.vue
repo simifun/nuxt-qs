@@ -76,7 +76,7 @@
 					</div>
 					<div id="hotdz">
 						<article class="excerpt-minic excerpt-minic-index" v-for="item in dzItems">
-							<h2><a target="_blank" class="red" href="https://qsong.fun/dzmain.html">【最新段子】</a> <a :href="item.href" v-cloak>{{item.articleTitle}}</a></h2>
+							<h2><a target="_blank" class="red" href="/jokes">【最新段子】</a> <a :href="item.href" v-cloak>{{item.articleTitle}}</a></h2>
 							<p class="note myellipsis-3" v-cloak>{{item.articleContent}}</p>
 						</article>
 					</div>
@@ -220,6 +220,13 @@
 <script>
 	import mNetUtils from "~/static/js/myajax.js"
 	export default {
+		head () {
+			return {
+				meta: [
+					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.uptodatelist)}
+				]
+			}
+		},
 		data() {
 			return {
 				ps: 10,

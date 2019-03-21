@@ -154,6 +154,13 @@
 <script>
 	import mNetUtils from "~/static/js/myajax.js"
 	export default {
+		head () {
+			return {
+				meta: [
+					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+				]
+			}
+		},
 		data() {
 			return {
 				ps: 10,

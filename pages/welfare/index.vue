@@ -173,6 +173,10 @@
 		},
 		head () {
 			return {
+				title: this.article.articleTitle,
+				meta: [
+					{ hid: 'description', name: 'description', content:"妹子图均来自gank.io！如果生活没有妹子，便只剩苟且！"}
+				],
 			  link: [
 					{ rel: 'stylesheet', type: 'text/css', href: '/css/gankio.css' },
 			  ]

@@ -46,7 +46,7 @@
 		</header>
 		<div class="site-search">
 			<div class="container">
-				<form method="get" class="site-search-form" action="searchresult.html"><input class="search-input" name="keywords"
+				<form method="get" class="site-search-form" action="/result"><input class="search-input" name="keywords"
 					 type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>
 			</div>
 		</div>
@@ -161,6 +161,10 @@
 		},
 		head () {
 			return {
+				title: this.article.articleTitle,
+				meta: [
+					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+				],
 			  link: [
 				{ rel: 'modulepreload', as: 'script', href: '/js/share.js' },
 				{ rel: 'stylesheet', type: 'text/css', href: '/css/share.css' },

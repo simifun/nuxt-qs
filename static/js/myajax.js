@@ -312,6 +312,14 @@ var mNetUtils = {
 			return "https://qsong.fun/img/" + url;
 		}
 	},
+	
+	getContent: function(items){
+		var contents = "";
+		items.forEach(function(item) {
+			contents += (item.text || item.articleTitle) +"|";
+		});
+		return contents;
+	}
 
 }
 
