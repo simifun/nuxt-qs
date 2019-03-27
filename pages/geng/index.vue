@@ -9,6 +9,9 @@
 					<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-25">
 						<a href="/"><i class="fa fa-home"></i> 首页</a>
 					</li>
+					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12 current-menu-item">
+						<a href="/geng"><i class="fa fa-bus"></i> 梗百科</a>
+					</li>
 					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
 						<a href="/video"><i class="fa fa-youtube-play"></i> 视频</a>
 					</li>
@@ -18,7 +21,7 @@
 					<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18">
 						<a href="/picture"><i class="fa fa-image"></i> 组图</a>
 					</li>
-					<li id="menu-item-13" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13 current-menu-item">
+					<li id="menu-item-13" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13">
 						<a href="/jokes"><i class="fa fa-flag"></i> 段子</a>
 					</li>
 					<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17">
@@ -40,39 +43,60 @@
 							</ul>
 						</li>
 					</ul>
-
 				</div>
 			</div>
 		</header>
 		<div class="site-search">
 			<div class="container">
 				<form method="get" class="site-search-form" action="/result"><input class="search-input" name="keywords"
-					type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>
+					 type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>
 			</div>
 		</div>
 		<section class="container">
 			<div class="content-wrap">
 				<div class="content">
-					<div class="catleader">
-						<h1>看段子</h1>
-						<div class="catleader-desc">短笑话，文字带来的笑料，简单却不失深意！</div>
+					<div id="goto" class="catleader word-oder">
+						<a href="#wo_A" class="goto">A</a>
+						<a href="#wo_B" class="goto">B</a>
+						<a href="#wo_C" class="goto">C</a>
+						<a href="#wo_D" class="goto">D</a>
+						<a href="#wo_E" class="goto">E</a>
+						<a href="#wo_F" class="goto">F</a>
+						<a href="#wo_G" class="goto">G</a>
+						<a href="#wo_H" class="goto">H</a>
+						<a href="#wo_J" class="goto">J</a>
+						<a href="#wo_K" class="goto">K</a>
+						<a href="#wo_L" class="goto">L</a>
+						<a href="#wo_M" class="goto">M</a>
+						<a href="#wo_N" class="goto">N</a>
+						<a href="#wo_O" class="goto">O</a>
+						<a href="#wo_P" class="goto">P</a>
+						<a href="#wo_Q" class="goto">Q</a>
+						<a href="#wo_R" class="goto">R</a>
+						<a href="#wo_S" class="goto">S</a>
+						<a href="#wo_T" class="goto">T</a>
+						<a href="#wo_U" class="goto">U</a>
+						<a href="#wo_W" class="goto">W</a>
+						<a href="#wo_X" class="goto">X</a>
+						<a href="#wo_Y" class="goto">Y</a>
+						<a href="#wo_Z" class="goto">Z</a>
+						<a href="#wo_~" class="goto">~</a>
 					</div>
-					<div id='list'>
-						<article class="excerpt-minic" v-for="(item,index) in items">
-							<h2><a target="_blank" :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2>
-							<p class="meta"><time><i class="fa fa-clock-o"></i>{{item.publishTime}}</time><span class="pv"><i class="fa fa-eye"></i>阅读({{item.readTime}})</span><a href="javascript:;" onclick="postlike(event)" class="post-like" v-bind:pid="item.articleId"><i class="fa fa-thumbs-o-up"></i>赞(<span v-cloak>{{item.niceNum}}</span>)</a></p>
-							<div class="article-content">
-								<img v-if="item.articleUrl" :src="item.articleUrl"/>
-								<p>{{item.articleContent}}</p>
-							</div>
-						</article>
+					<ul class="word-list">
+            <li v-for="item in items">
+							<a :id="item.id" class="gotoOffset"></a>
+							<dl class="clearfix">
+								<dt class="fc-gblue">{{item.code}}</dt>
+								<dd v-for="it in item.list"><a :href="it.href" target="_blank">{{it.text}}</a></dd>
+							</dl>
+						</li>
+					</ul>
+					<div id="loader" class="ias_loader" style="display: none;">
+						<div class="pagination-loading"><img src="/image/loading.gif"></div>
 					</div>
-				</div>
-				<div id="loader" class="ias_loader" style="display: none;">
-					<div class="pagination-loading"><img src="/image/loading.gif"></div>
-				</div>
-				<div id="nomore" class="ias_loader" style="display: none;">
-					<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>没有更多啦！</strong></div>
+					<div id="nomore" class="ias_loader" style="display: none;">
+						<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>没有更多啦！</strong></div>
+					</div>
 				</div>
 			</div>
 			<div id="sidebarInfo" class="sidebar">
@@ -152,6 +176,13 @@
 <script>
 	import mNetUtils from "~/static/js/myajax.js"
 	export default {
+		head () {
+			return {
+				meta: [
+					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+				]
+			}
+		},
 		data() {
 			return {
 				ps: 10,
@@ -184,7 +215,7 @@
 				this.isloading = true;
 				var that = this;
 				var params = {
-					type: 'dz',
+					type: 'gif',
 					ps: this.ps,
 					pn: ++this.pn,
 				};
@@ -193,7 +224,7 @@
 					$('#loader').attr('style','display: none;');
 					if(res.success === true && res.data.list != null) {
 						that.items = that.items.concat(mNetUtils.convert(res.data.list));
-					} else {
+					} else{
 						$('#nomore').attr('style','');
 					}
 				});
@@ -201,12 +232,12 @@
 		},
 		async asyncData ({ app,params}) {
 			let [itemsData,randData,nData] = await Promise.all([
-				app.$axios.$get('/article/getArticleList?ps=10&pn=1&type=dz'),
+				app.$axios.$get('/article/getArticleList?ps=10&pn=1&type=gif'),
 				app.$axios.$get('/article/getRandArticle'),
 				app.$axios.$get('/article/getArticleList?ps=5&pn=1&type=notice'),
 			])
 			return {
-				items: mNetUtils.convert(itemsData.data.list),
+				items: mNetUtils.getItems(),
 				randList: mNetUtils.convertRandList(randData.data.list),
 				noticeList: mNetUtils.convertHotList(nData.data.list),
 			}
@@ -223,11 +254,96 @@
 		 				that.pullupRefresh();
 		 			}
 		 		});
+				//主要修复锚点定位不准确的问题
+				$('#goto a[href^=#][href!=#]').click(function() {
+						var target = document.getElementById(this.hash.slice(1));
+						if (!target) return;
+						var targetOffset = $(target).offset().top - 100;
+						$('html,body').animate({
+								scrollTop: targetOffset
+						},
+						300);
+						return false;
+				}); 
 		 	})
 		 }, 
 	}
 </script>
 
 <style>
+.word-list li dl {
+    padding: 15px;
+    padding-left: 75px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+.word-list li dl dt {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: bold;
+    width: 60px;
+    text-align: center;
+}
+.fc-gblue {
+    color: #819cb9;
+}
+
+.word-list li dl dd {
+	float: left;
+	width: 32%;
+	line-height: 30px;
+	margin-left: 1.33%;
+}
+
+@media (max-width:640px){
+	.word-list li dl dd {
+		float: left;
+		width: 45%;
+		line-height: 30px;
+		margin-left: 2%;
+	}
+}
+.clearfix {
+    zoom: 1;
+}
+.word-list li {
+    padding-top: 15px;
+}
+.catleader {
+	margin-bottom: 0px;
+}
+
+.word-oder {
+    line-height: 30px;
+    overflow: hidden;
+    padding: 5px;
+    background-color: #45B6F7;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.word-oder a {
+    display: block;
+    float: left;
+    width: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.nav-fixed .word-oder {
+    position: fixed;
+    top: 62px;
+    left: 0;
+    right: 0;
+    padding: 0;
+		opacity: 0.7;
+		border-radius: 0;
+    z-index: 998;
+}
 
 </style>

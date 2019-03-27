@@ -1,5 +1,5 @@
 .bdsharebuttonbox{line-height: 24px;height: 24px;overflow: hidden;vertical-align: top;}
-.bdsharebuttonbox a{width: 24px;height: 24px;display: inline-block;margin-right: 5px;background: url(../img/share.png) no-repeat;cursor: pointer;margin-bottom: 0;opacity: .8}
+.bdsharebuttonbox a{width: 24px;height: 24px;display: inline-block;margin-right: 5px;background: url(../image/share.png) no-repeat;cursor: pointer;margin-bottom: 0;opacity: .8}
 .bdsharebuttonbox a:hover{opacity: 1}
 .bdsharebuttonbox a.bds_tsina{background-position     : 0 0;}
 .bdsharebuttonbox a.bds_weixin{background-position    : 0 -33px;}

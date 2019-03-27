@@ -9,6 +9,7 @@ module.exports = {
   */
   head: {
     title: '轻松一下',
+
     meta: [
       { charset: 'utf-8' },
 			{ 'http-equiv':'X-UA-Compatible',content:'IE=11,IE=10,IE=9,IE=8'},
@@ -28,7 +29,6 @@ module.exports = {
 		],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-			{ rel: 'modulepreload', as: 'script', href: '/js/newajax.js' },
 			{ rel: 'stylesheet', type: 'text/css', href: '/css/bootstrap.min.css' },
 			{ rel: 'stylesheet', type: 'text/css', href: '/css/font-awesome.min.css' },
 			{ rel: 'stylesheet', type: 'text/css', href: '/css/main.css' },
@@ -53,6 +53,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+	// '~/plugins/axios'
   ],
 
   /*
@@ -62,7 +63,7 @@ module.exports = {
 		'@nuxtjs/axios'
   ],
 	axios: {
-    baseURL: 'https://qsong.fun',
+    baseURL: 'http://www.qsong.fun',
     // or other axios configs.
   },
   /*
@@ -72,8 +73,13 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+	vendor:['axios'],
     extend(config, ctx) {
       
     }
+  },
+  server: {
+    port: 8009, // default: 3000
+    host: '127.0.0.1', // default: localhost
   }
 }

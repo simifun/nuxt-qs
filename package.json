@@ -1,7 +1,7 @@
 {
   "name": "qsong",
   "version": "1.0.0",
-	"keywords":"轻松,soft,gif,搞笑图片,视频,段子",
+  "keywords": "轻松,soft,gif,搞笑图片,视频,段子",
   "description": "轻松一下，精彩轻松的gif搞笑图片、视频、段子集中营",
   "author": "simifun",
   "private": true,
@@ -12,6 +12,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.4.1",
+    "@nuxtjs/proxy": "^1.3.3",
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.0"
   },

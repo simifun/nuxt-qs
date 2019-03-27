@@ -2,13 +2,16 @@
 	<div id="body" class="m-excerpt-cat site-layout-2 rollbar-m-on">
 		<header class="header">
 			<div class="container">
-				<h1 class="logo"><nuxt-link to="/" title="轻松一下"><img src="/img/logo.png" alt="轻松一下-抛开那烦恼">轻松一下</nuxt-link></h1>
+				<h1 class="logo"><nuxt-link to="/" title="轻松一下"><img src="/image/logo.png" alt="轻松一下-抛开那烦恼">轻松一下</nuxt-link></h1>
 				<div class="brand">QSONG.FUN
 					<br>有事没事轻松一下</div>
 				<ul class="site-nav site-navbar">
 					<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-25">
 						<a href="/"><i class="fa fa-home"></i> 首页</a>
 					</li>
+					<!-- <li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
+						<a href="/geng"><i class="fa fa-bus"></i> 梗百科</a>
+					</li> -->
 					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
 						<a href="/video"><i class="fa fa-youtube-play"></i> 视频</a>
 					</li>
@@ -35,7 +38,7 @@
 							<a href="javascript:;">微信小程序 <i class="fa fa-angle-down"></i></a>
 							<ul class="sub-menu">
 								<li>
-									<a class="sns-wechat" href="javascript:;" title="微信小程序" data-src="/img/wxapp.jpg">扫码体验</a>
+									<a class="sns-wechat" href="javascript:;" title="微信小程序" data-src="/image/wxapp.jpg">扫码体验</a>
 								</li>
 							</ul>
 						</li>
@@ -62,13 +65,13 @@
 						</ol>
 						<div class="carousel-inner" role="listbox">
 							<div class="item">
-								<a target="_blank" href="https://qsong.fun"><img src="/img/Banner_woniu.jpg"></a>
+								<a target="_blank" href="https://qsong.fun"><img src="/image/Banner_woniu.jpg"></a>
 							</div>
 							<div class="item active">
-								<a target="_blank" href="https://qsong.fun"><img src="/img/Banner_guangyingshuihua.jpg"></a>
+								<a target="_blank" href="https://qsong.fun"><img src="/image/Banner_guangyingshuihua.jpg"></a>
 							</div>
 							<div class="item">
-								<a target="_blank" href="https://qsong.fun"><img src="/img/Banner_weimei.jpg"></a>
+								<a target="_blank" href="https://qsong.fun"><img src="/image/Banner_weimei.jpg"></a>
 							</div>
 						</div>
 						<a class="left carousel-control" href="#focusslide" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
@@ -115,7 +118,7 @@
 						</article>
 					</div>
 					<div id="loader" class="ias_loader" style="display: none;">
-						<div class="pagination-loading"><img src="/img/loading.gif"></div>
+						<div class="pagination-loading"><img src="/image/loading.gif"></div>
 					</div>
 					<div id="nomore" class="ias_loader" style="display: none;">
 						<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>没有更多啦！</strong></div>
@@ -146,7 +149,7 @@
 									<p>打开微信扫一扫<br>体验小程序版<br>内容同步更新!</p>
 								</li>
 								<li style="float: left;width: 50%;">
-									<img src="/img/wxapp.jpg" style="width: 80%;">
+									<img src="/image/wxapp.jpg" style="width: 80%;">
 								</li>
 							</ul>
 						</li>
@@ -202,7 +205,7 @@
 			<ul>
 				<li class="rollbar-qrcode">
 					<a href="javascript:;"><i class="fa fa-qrcode"></i><span>微信咨询</span></a>
-					<h6>微信咨询<img src="/img/wxqrcode.png"><i></i></h6>
+					<h6>微信咨询<img src="/image/wxqrcode.png"><i></i></h6>
 				</li>
 				<li>
 					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=917437934&site=qq&menu=yes"><i class="fa fa-qq"></i><span>QQ咨询</span></a>

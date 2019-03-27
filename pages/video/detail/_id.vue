@@ -2,7 +2,7 @@
 	<div id="body" class="m-excerpt-cat single site-layout-2 rollbar-m-on">
 		<header class="header">
 			<div class="container">
-				<h1 class="logo"><nuxt-link to="/" title="轻松一下"><img src="/img/logo.png" alt="轻松一下-抛开那烦恼">轻松一下</nuxt-link></h1>
+				<h1 class="logo"><nuxt-link to="/" title="轻松一下"><img src="/image/logo.png" alt="轻松一下-抛开那烦恼">轻松一下</nuxt-link></h1>
 				<div class="brand">QSONG.FUN
 					<br>有事没事轻松一下</div>
 				<ul class="site-nav site-navbar">
@@ -35,7 +35,7 @@
 							<a href="javascript:;">微信小程序 <i class="fa fa-angle-down"></i></a>
 							<ul class="sub-menu">
 								<li>
-									<a class="sns-wechat" href="javascript:;" title="微信小程序" data-src="/img/wxapp.jpg">扫码体验</a>
+									<a class="sns-wechat" href="javascript:;" title="微信小程序" data-src="/image/wxapp.jpg">扫码体验</a>
 								</li>
 							</ul>
 						</li>
@@ -128,7 +128,7 @@
 			<ul>
 				<li class="rollbar-qrcode">
 					<a href="javascript:;"><i class="fa fa-qrcode"></i><span>微信咨询</span></a>
-					<h6>微信咨询<img src="/img/wxqrcode.png"><i></i></h6>
+					<h6>微信咨询<img src="/image/wxqrcode.png"><i></i></h6>
 				</li>
 				<li>
 					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=917437934&site=qq&menu=yes"><i class="fa fa-qq"></i><span>QQ咨询</span></a>

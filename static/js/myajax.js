@@ -319,7 +319,53 @@ var mNetUtils = {
 			contents += (item.text || item.articleTitle) +"|";
 		});
 		return contents;
-	}
+	},
+	
+	getItems: function(){
+		var items = [];
+		for(var i=0;i<26;i++){
+			var code = String.fromCharCode(65+i);
+			var item = {
+				id: 'wo_'+code,
+				code: code,
+				list: [
+					{
+						text: '安利',
+						href: '/geng/detail/anli',
+					},{
+						text: '安利',
+						href: '/geng/detail/anli',
+					},{
+						text: '爱豆',
+						href: '/geng/detail/anli',
+					},{
+						text: '阿西吧',
+						href: '/geng/detail/anli',
+					},{
+						text: '奥利给',
+						href: '/geng/detail/anli',
+					},{
+						text: '奥斯卡颁奖大乌龙',
+						href: '/geng/detail/anli',
+					},{
+						text: '爱是一道光',
+						href: '/geng/detail/anli',
+					},{
+						text: '傲娇受',
+						href: '/geng/detail/anli',
+					},{
+						text: '按头小分队',
+						href: '/geng/detail/anli',
+					},{
+						text: '矮大紧',
+						href: '/geng/detail/anli',
+					}
+				]
+			};
+			items.push(item);
+		};
+		return items;
+	},
 
 }
 
