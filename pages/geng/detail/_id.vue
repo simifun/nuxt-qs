@@ -54,39 +54,19 @@
 			<div class="content-wrap">
 				<div id="dtContent" class="content">
 					<header class="article-header">
-						<h1 class="article-title"><a href="#">{{article.articleTitle}}</a></h1>
+						<h1 class="article-title"><a href="#">{{word.word}}</a></h1>
 						<div class="article-meta">
-							<span class="item"><time><i class="fa fa-clock-o"></i>{{article.publishTime}}</time></span>
-							<span class="item"><span class="pv"><i class="fa fa-eye"></i>阅读({{article.readTime}})</span></span>
-							<span class="item"><span class="pv"><i class="fa fa-thumbs-o-up"></i>赞({{article.niceNum}})</span></span>
+							<span class="item"><time><i class="fa fa-clock-o"></i>{{word.createTime.split(" ")[0]}}</time></span>
+							<span class="item"><span class="pv"><i class="fa fa-eye"></i>阅读({{word.readNum}})</span></span>
+							<span class="item"><span class="pv"><i class="fa fa-thumbs-o-up"></i>赞({{word.niceNum}})</span></span>
 						</div>
 					</header>
 					<article class="article-content">
-						<div class="container gallery-container">
-							<div class="tz-gallery">
-								<div class="row">
-									<div class="thumbnail">
-										<div id="myImg" class="lightbox">
-											<a v-bind:data-caption="nowItem.text">
-												<img :src="nowItem.imgId" alt="loading...">
-											</a>
-										</div>
-										<div class="caption">
-											<p>{{nowItem.text}}</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						<div v-html="compiledMarkdown"></div>
 					</article>
-					<div class="article-paging">
-						<ul class="pagination">
-							<li v-on:click="onchange(index,$event)" v-for="(item,index) in items"><a>{{index+1}}</a></li>
-						</ul>
-					</div>
 					<div class="post-actions">
-						<a href="javascript:;" onclick="postlike(event)" class="post-like action action-like" v-bind:pid="article.articleId">
-							<i class="fa fa-thumbs-o-up"></i>赞(<span>{{article.niceNum}}</span>)
+						<a href="javascript:;" onclick="postlike(event)" class="post-like action action-like" v-bind:pid="word.id" :ptype="word">
+							<i class="fa fa-thumbs-o-up"></i>赞(<span>{{word.niceNum}}</span>)
 						</a>
 					</div>
 					<div class="action-share">
@@ -107,7 +87,7 @@
 						<span class="article-nav-next">下一篇<br><a v-bind:href="nextArticle.href" rel="next">{{nextArticle.articleTitle}}</a></span>
 					</nav>
 					<!--PC和WAP自适应版-->
-					<div id="SOHUCS" v-bind:sid="article.articleId"></div>
+					<div id="SOHUCS" v-bind:sid="word.id"></div>
 					<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
 				</div>
 			</div>
@@ -160,13 +140,30 @@
 
 <script>
 	import mNetUtils from "~/static/js/myajax.js"
+	import marked from 'marked'
+	var rendererMD = new marked.Renderer()
+	marked.setOptions({
+		renderer: rendererMD,
+		gfm: true,
+		tables: true,
+		breaks: false,
+		pedantic: false,
+		sanitize: false,
+		smartLists: true,
+		smartypants: false
+	})
 	export default {
-		validate ({ params }) {
-			return /^\d+$/.test(params.id)
+// 		validate ({ params }) {
+// 			return /^\d+$/.test(params.id)
+// 		},
+		computed: {
+			compiledMarkdown: function () {
+				return marked(this.word.mdtext, { sanitize: true });
+			}
 		},
 		head () {
 			return {
-				title: this.article.articleTitle,
+				title: this.word.word,
 				meta: [
 					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
 				],
@@ -222,21 +219,14 @@
 			}
 		},
 		async asyncData ({ app,params}) {
-			var detailParams = {
-				articleId: params.id,
-				type: 'gif',
-			}
-			let [data,randData,nData] = await Promise.all([
-				app.$axios.$get('/article/getArticleDtl',{params:detailParams}),
+			let [wordData,randData] = await Promise.all([
+				app.$axios.$get('http://localhost:8090/word/getWords'),
 				app.$axios.$get('/article/getRandArticle'),
-			])
+			]);
 			return {
 				randList: mNetUtils.convertRandList(randData.data.list),
-				items: mNetUtils.convertInit(data.data.article),
-				nowItem : mNetUtils.convertInit(data.data.article)[0],
-				article : mNetUtils.convertDetail(data.data.article).article,
-				lastArticle : mNetUtils.convertDetail(data.data.article).lastArticle,
-				nextArticle : mNetUtils.convertDetail(data.data.article).nextArticle,
+				itms: wordData&&(console.log(wordData.data.list)),
+				word: wordData.data.list[0]
 			}
 		 },
 		 mounted() {

@@ -484,9 +484,11 @@ if($('#SOHUCS').length) $('#SOHUCS').before('<span id="comments"></span>')
 
 function postlike(e) {
 	var _this = e.currentTarget;
-	var _ta = $(_this)
-	var pid = _ta.attr('pid')
-	if(_ta.hasClass('actived')) return alert('你已赞！')
+	var _ta = $(_this);
+	var pid = _ta.attr('pid');
+	var type = _ta.attr('ptype');
+	
+	if(_ta.hasClass('actived')) return alert('你已赞！');
 	if(!pid || !/^\d{1,}$/.test(pid)) return;
 	if(!jsui.is_signin) {
 		var lslike = lcs.get('_likes') || ''
@@ -507,16 +509,19 @@ function postlike(e) {
 			}
 		}
 	}
+	var url = 'https://qsong.fun/article/postAddNice',data = {articleId: pid}
+	if('word' === type){
+		url = 'https://qsong.fun/word/postAddNice';
+		data = {id: pid};
+	};
 	$.ajax({
-		url: 'https://qsong.fun/article/postAddNice',
+		url: url,
 		type: 'POST',
 		dataType: 'json',
 		headers: {
 			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
 		},
-		data: {
-			articleId: pid,
-		},
+		data: data,
 		success: function(data, textStatus, xhr) {
 			if(data.error) return false;
 			_ta.toggleClass('actived');

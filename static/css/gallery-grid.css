@@ -50,9 +50,9 @@
 
 
 @media(max-width: 768px) {
-    body {
+    /* body {
         padding: 0;
-    }
+    } */
 
     .container.gallery-container {
         border-radius: 0;
