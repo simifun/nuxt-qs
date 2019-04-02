@@ -321,6 +321,32 @@ var mNetUtils = {
 		return contents;
 	},
 	
+	convertWordList: function(data){
+		if(!data){
+			return;
+		};
+		// return mNetUtils.getItems();
+		var map = new Map();
+		var cMapEl = {};
+		data.forEach(function(item) {
+			map.set(item.code,{
+				cid : 'wo_' + item.code,
+				code : item.code,
+				list : []
+			});
+		});
+		
+		data.forEach(function(item) {
+			cMapEl = map.get(item.code);
+			cMapEl.list.push({
+				text: item.word,
+				href: '/geng/detail/'+item.id,
+			});
+			map.set(item.code,cMapEl);
+		});
+		return [...map.values()];
+	},
+	
 	getItems: function(){
 		var items = [];
 		for(var i=0;i<26;i++){

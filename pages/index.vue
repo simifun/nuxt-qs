@@ -9,9 +9,9 @@
 					<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-25">
 						<a href="/"><i class="fa fa-home"></i> 首页</a>
 					</li>
-					<!-- <li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
+					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
 						<a href="/geng"><i class="fa fa-bus"></i> 梗百科</a>
-					</li> -->
+					</li>
 					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
 						<a href="/video"><i class="fa fa-youtube-play"></i> 视频</a>
 					</li>

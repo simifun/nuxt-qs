@@ -83,20 +83,14 @@
 						<a href="#wo_~" class="goto">~</a>
 					</div>
 					<ul class="word-list">
-            <li v-for="item in items">
-							<a :id="item.id" class="gotoOffset"></a>
+						<li v-for="item in items">
+							<a :id="item.cid" class="gotoOffset"></a>
 							<dl class="clearfix">
 								<dt class="fc-gblue">{{item.code}}</dt>
 								<dd v-for="it in item.list"><a :href="it.href" target="_blank">{{it.text}}</a></dd>
 							</dl>
 						</li>
 					</ul>
-					<div id="loader" class="ias_loader" style="display: none;">
-						<div class="pagination-loading"><img src="/image/loading.gif"></div>
-					</div>
-					<div id="nomore" class="ias_loader" style="display: none;">
-						<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>没有更多啦！</strong></div>
-					</div>
 				</div>
 			</div>
 			<div id="sidebarInfo" class="sidebar">
@@ -178,8 +172,9 @@
 	export default {
 		head () {
 			return {
+				title: "小轻松梗百科",
 				meta: [
-					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+					{ hid: 'description', name: 'description', content:"小轻松梗百科"}
 				]
 			}
 		},
@@ -206,38 +201,16 @@
 						$this.removeClass("refreshRotate");
 					}, 1000);
 				}
-			},
-			pullupRefresh(){
-				if($('#nomore').is(':visible')){
-					return;
-				}
-				$('#loader').attr('style','');
-				this.isloading = true;
-				var that = this;
-				var params = {
-					type: 'gif',
-					ps: this.ps,
-					pn: ++this.pn,
-				};
-				this.$axios.$get(mNetUtils.ARTICLE_LIST,{params}).then((res) => {
-					that.isloading = false;
-					$('#loader').attr('style','display: none;');
-					if(res.success === true && res.data.list != null) {
-						that.items = that.items.concat(mNetUtils.convert(res.data.list));
-					} else{
-						$('#nomore').attr('style','');
-					}
-				});
 			}
 		},
 		async asyncData ({ app,params}) {
 			let [itemsData,randData,nData] = await Promise.all([
-				app.$axios.$get('/article/getArticleList?ps=10&pn=1&type=gif'),
+				app.$axios.$get('/word/getWords'),
 				app.$axios.$get('/article/getRandArticle'),
 				app.$axios.$get('/article/getArticleList?ps=5&pn=1&type=notice'),
 			])
 			return {
-				items: mNetUtils.getItems(),
+				items: mNetUtils.convertWordList(itemsData.data.list),
 				randList: mNetUtils.convertRandList(randData.data.list),
 				noticeList: mNetUtils.convertHotList(nData.data.list),
 			}
@@ -245,15 +218,7 @@
 		 mounted() {
 			let that = this;
 		 	this.$nextTick(function(){
-				that.items = that.items.concat([]);
-		 		$(window).scroll(function() {
-		 			var wScrollY = window.scrollY; // 当前滚动条top值  
-		 			var wInnerH = window.innerHeight; // 设备窗口的高度
-		 			var bScrollH = document.body.scrollHeight; // body总高度   
-		 			if(!that.isloading && wScrollY + wInnerH >= bScrollH - 10) {
-		 				that.pullupRefresh();
-		 			}
-		 		});
+				// that.items = that.items.concat([]);
 				//主要修复锚点定位不准确的问题
 				$('#goto a[href^=#][href!=#]').click(function() {
 						var target = document.getElementById(this.hash.slice(1));
@@ -345,5 +310,4 @@
 		border-radius: 0;
     z-index: 998;
 }
-
 </style>

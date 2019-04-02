@@ -9,10 +9,13 @@
 					<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-25">
 						<a href="/"><i class="fa fa-home"></i> 首页</a>
 					</li>
+					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12 current-menu-item">
+						<a href="/geng"><i class="fa fa-bus"></i> 梗百科</a>
+					</li>
 					<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19">
 						<a href="/video"><i class="fa fa-youtube-play"></i> 视频</a>
 					</li>
-					<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20 current-menu-item">
+					<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20">
 						<a href="/gif"><i class="fa fa-file-movie-o"></i> 动图</a>
 					</li>
 					<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18">
@@ -65,7 +68,7 @@
 						<div v-html="compiledMarkdown"></div>
 					</article>
 					<div class="post-actions">
-						<a href="javascript:;" onclick="postlike(event)" class="post-like action action-like" v-bind:pid="word.id" :ptype="word">
+						<a href="javascript:;" onclick="postlike(event)" class="post-like action action-like" :pid="word.id" ptype="word">
 							<i class="fa fa-thumbs-o-up"></i>赞(<span>{{word.niceNum}}</span>)
 						</a>
 					</div>
@@ -82,10 +85,10 @@
 					</div>
 					<div class="post-copyright">未经允许不得转载：<a href="https://qsong.fun">轻松一下</a> » <a href="#">{{article.articleTitle}}</a></div>
 	
-					<nav class="article-nav">
+					<!-- <nav class="article-nav">
 						<span class="article-nav-prev">上一篇<br><a v-bind:href="lastArticle.href" rel="prev">{{lastArticle.articleTitle}}</a></span>
 						<span class="article-nav-next">下一篇<br><a v-bind:href="nextArticle.href" rel="next">{{nextArticle.articleTitle}}</a></span>
-					</nav>
+					</nav> -->
 					<!--PC和WAP自适应版-->
 					<div id="SOHUCS" v-bind:sid="word.id"></div>
 					<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
@@ -153,9 +156,9 @@
 		smartypants: false
 	})
 	export default {
-// 		validate ({ params }) {
-// 			return /^\d+$/.test(params.id)
-// 		},
+		validate ({ params }) {
+			return /^\d+$/.test(params.id)
+		},
 		computed: {
 			compiledMarkdown: function () {
 				return marked(this.word.mdtext, { sanitize: true });
@@ -165,7 +168,7 @@
 			return {
 				title: this.word.word,
 				meta: [
-					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+					{ hid: 'description', name: 'description', content:this.word.word}
 				],
 			  link: [
 				{ rel: 'modulepreload', as: 'script', href: '/js/share.js' },
@@ -203,36 +206,21 @@
 					}, 1000);
 				}
 			},
-			onchange(index,e) {
-				var that = $(e.currentTarget).children(":first");
-				var parent = $(e.currentTarget).parent();
-				parent.find('li').each(function() {
-						$(this).children(":first").removeClass("mactive");
-				});
-				that.addClass("mactive");
-				this.nowItem = this.items[index];
-				var myImg = document.getElementById("myImg");
-				myImg.innerHTML = '\
-						<a data-caption="'+ this.nowItem.text + '">\
-							<img src="'+ this.nowItem.imgId + '" alt="loading...">\
-						</a>'
-			}
 		},
 		async asyncData ({ app,params}) {
 			let [wordData,randData] = await Promise.all([
-				app.$axios.$get('http://localhost:8090/word/getWords'),
+				app.$axios.$get('/word/getWord?id=' + params.id),
 				app.$axios.$get('/article/getRandArticle'),
 			]);
 			return {
 				randList: mNetUtils.convertRandList(randData.data.list),
-				itms: wordData&&(console.log(wordData.data.list)),
-				word: wordData.data.list[0]
+				word: wordData.data.word,
 			}
 		 },
 		 mounted() {
 			let that = this;
 		 	this.$nextTick(function(){
-				/**			畅言配置		**/
+				/**		畅言配置		**/
 				window.changyan.api.config({
 					appid: 'cytNEHvD4',
 					conf: 'prod_64b2c48f973a27674ff429798323a2c6'
