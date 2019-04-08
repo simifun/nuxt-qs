@@ -71,7 +71,7 @@
 									<div class="thumbnail">
 										<div id="myImg" class="lightbox">
 											<a v-bind:data-caption="nowItem.text">
-												<img :src="nowItem.imgId" alt="loading...">
+												<img :src="nowItem.imgId" :alt="nowItem.text">
 											</a>
 										</div>
 										<div class="caption">
@@ -146,7 +146,7 @@
 			<ul>
 				<li class="rollbar-qrcode">
 					<a href="javascript:;"><i class="fa fa-qrcode"></i><span>微信咨询</span></a>
-					<h6>微信咨询<img src="/image/wxqrcode.png"><i></i></h6>
+					<h6>微信咨询<img src="/image/wxqrcode.png" alt="扫码加我微信"><i></i></h6>
 				</li>
 				<li>
 					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=917437934&site=qq&menu=yes"><i class="fa fa-qq"></i><span>QQ咨询</span></a>

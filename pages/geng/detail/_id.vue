@@ -126,7 +126,7 @@
 			<ul>
 				<li class="rollbar-qrcode">
 					<a href="javascript:;"><i class="fa fa-qrcode"></i><span>微信咨询</span></a>
-					<h6>微信咨询<img src="/image/wxqrcode.png"><i></i></h6>
+					<h6>微信咨询<img src="/image/wxqrcode.png" alt="扫码加我微信"><i></i></h6>
 				</li>
 				<li>
 					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=917437934&site=qq&menu=yes"><i class="fa fa-qq"></i><span>QQ咨询</span></a>
@@ -258,4 +258,5 @@
 	.thumbnail a>img{height: 250px!important;}
 	.article-header {margin-bottom: -5px!important;}
 	.mactive{background: #ddd!important;}
+	.article-header {border-bottom:0;}
 </style>

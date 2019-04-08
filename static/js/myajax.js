@@ -309,7 +309,7 @@ var mNetUtils = {
 		if (url.indexOf("http") == 0) {
 			return url;
 		} else {
-			return "https://qsong.fun/img/" + url;
+			return "https://www.qsong.fun/img/" + url;
 		}
 	},
 	

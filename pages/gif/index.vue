@@ -159,6 +159,7 @@
 	export default {
 		head () {
 			return {
+				title: "轻松一下-GIF动图",
 				meta: [
 					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
 				]

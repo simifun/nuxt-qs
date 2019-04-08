@@ -114,7 +114,7 @@
 		<div class="modal fade" id="modal-img" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-body" style="padding:0">
-					<img id="imgId" style="width:100%;height: auto;" src="">
+					<img id="imgId" style="width:100%;height: auto;" src="" alt="视频封面图">
 				</div>
 			</div>
 		</div>
@@ -131,7 +131,7 @@
 			<ul>
 				<li class="rollbar-qrcode">
 					<a href="javascript:;"><i class="fa fa-qrcode"></i><span>微信咨询</span></a>
-					<h6>微信咨询<img src="/image/wxqrcode.png"><i></i></h6>
+					<h6>微信咨询<img src="/image/wxqrcode.png" alt="扫码加我微信"><i></i></h6>
 				</li>
 				<li>
 					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=917437934&site=qq&menu=yes"><i class="fa fa-qq"></i><span>QQ咨询</span></a>

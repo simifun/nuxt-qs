@@ -61,7 +61,7 @@
 					</div>
 					<div id='list'>
 						<article class="excerpt excerpt-1" v-for="(item,index) in items">
-							<a target="_blank" class="focus" :href="item.href"><img :src="item.articleImg" class="thumb" style="display: inline;"></a>
+							<a target="_blank" class="focus" :href="item.href"><img :src="item.articleImg" :alt="item.articleTitle" class="thumb" style="display: inline;"></a>
 							<header>
 								<a class="cat" v-cloak>{{item.typeName}}<i></i></a>
 								<h2><a target="_blank" :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2></header>
@@ -100,7 +100,7 @@
 									<p>打开微信扫一扫<br>体验小程序版<br>内容同步更新!</p>
 								</li>
 								<li style="float: left;width: 50%;">
-									<img src="/image/wxapp.jpg" style="width: 80%;">
+									<img src="/image/wxapp.jpg" style="width: 80%;" alt="扫码加我微信">
 								</li>
 							</ul>
 						</li>
@@ -158,7 +158,9 @@
 	export default {
 		head () {
 			return {
+				title: '轻松一下-视频',
 				meta: [
+					{ hid: 'keywords', name:'keywords', content:mNetUtils.getContent(this.items)},
 					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
 				]
 			}

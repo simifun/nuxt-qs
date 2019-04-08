@@ -61,12 +61,11 @@
 					</div>
 					<div id='list'>
 						<article class="excerpt excerpt-1" v-for="(item,index) in items">
-							<a target="_blank" class="focus" :href="item.href"><img :src="item.articleImg" class="thumb" style="display: inline;"></a>
+							<a target="_blank" class="focus" :href="item.href"><img :src="item.articleImg" :alt="item.articleTitle" class="thumb" style="display: inline;"></a>
 							<header>
 								<a class="cat" v-cloak>{{item.typeName}}<i></i></a>
 								<h2><a target="_blank" :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2></header>
 							<p class="meta"><time v-cloak><i class="fa fa-clock-o"></i>{{item.publishTime}}</time><span class="pv" v-cloak><i class="fa fa-eye"></i>阅读({{item.readTime}})</span>
-								<!--<a class="pc" href="https://qsong.fun/754.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a>-->
 								<a href="javascript:;" onclick="postlike(event)" class="post-like" v-bind:pid="item.articleId"><i class="fa fa-thumbs-o-up"></i>赞(<span v-cloak>{{item.niceNum}}</span>)</a>
 							</p>
 							<p class="note myellipsis-3">{{item.articleContent}}</p>
@@ -74,7 +73,7 @@
 					</div>
 				</div>
 				<div id="loader" class="ias_loader" style="display: none;">
-					<div class="pagination-loading"><img src="/image/loading.gif"></div>
+					<div class="pagination-loading"><img src="/image/loading.gif" alt="加载中..."></div>
 				</div>
 				<div id="nomore" class="ias_loader" style="display: none;">
 					<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>没有更多啦！</strong></div>
@@ -101,7 +100,7 @@
 									<p>打开微信扫一扫<br>体验小程序版<br>内容同步更新!</p>
 								</li>
 								<li style="float: left;width: 50%;">
-									<img src="/image/wxapp.jpg" style="width: 80%;">
+									<img src="/image/wxapp.jpg" style="width: 80%;" alt="微信小程序码">
 								</li>
 							</ul>
 						</li>
@@ -139,7 +138,7 @@
 			<ul>
 				<li class="rollbar-qrcode">
 					<a href="javascript:;"><i class="fa fa-qrcode"></i><span>微信咨询</span></a>
-					<h6>微信咨询<img src="/image/wxqrcode.png"><i></i></h6>
+					<h6>微信咨询<img src="/image/wxqrcode.png" alt="扫码加我微信"><i></i></h6>
 				</li>
 				<li>
 					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=917437934&site=qq&menu=yes"><i class="fa fa-qq"></i><span>QQ咨询</span></a>
@@ -159,7 +158,9 @@
 	export default {
 		head () {
 			return {
+				title: '轻松一下-组图',
 				meta: [
+					{ hid: 'keywords', name:'keywords', content:mNetUtils.getContent(this.items)},
 					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
 				]
 			}

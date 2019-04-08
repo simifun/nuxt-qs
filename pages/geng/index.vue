@@ -114,7 +114,7 @@
 									<p>打开微信扫一扫<br>体验小程序版<br>内容同步更新!</p>
 								</li>
 								<li style="float: left;width: 50%;">
-									<img src="/image/wxapp.jpg" style="width: 80%;">
+									<img src="/image/wxapp.jpg" style="width: 80%;" alt="小程序码">
 								</li>
 							</ul>
 						</li>
@@ -152,7 +152,7 @@
 			<ul>
 				<li class="rollbar-qrcode">
 					<a href="javascript:;"><i class="fa fa-qrcode"></i><span>微信咨询</span></a>
-					<h6>微信咨询<img src="/image/wxqrcode.png"><i></i></h6>
+					<h6>微信咨询<img src="/image/wxqrcode.png" alt="扫码加我微信"><i></i></h6>
 				</li>
 				<li>
 					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=917437934&site=qq&menu=yes"><i class="fa fa-qq"></i><span>QQ咨询</span></a>
@@ -174,6 +174,7 @@
 			return {
 				title: "小轻松梗百科",
 				meta: [
+					{ hid: 'keywords', name: 'keywords', content:"文体两开花,养肥了再看,硬核,死亡把比粉色,人类的本质是复读机,是什么梗"},
 					{ hid: 'description', name: 'description', content:"小轻松梗百科"}
 				]
 			}

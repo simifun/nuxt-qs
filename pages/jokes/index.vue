@@ -65,7 +65,7 @@
 							<h2><a target="_blank" :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2>
 							<p class="meta"><time><i class="fa fa-clock-o"></i>{{item.publishTime}}</time><span class="pv"><i class="fa fa-eye"></i>阅读({{item.readTime}})</span><a href="javascript:;" onclick="postlike(event)" class="post-like" v-bind:pid="item.articleId"><i class="fa fa-thumbs-o-up"></i>赞(<span v-cloak>{{item.niceNum}}</span>)</a></p>
 							<div class="article-content">
-								<img v-if="item.articleUrl" :src="item.articleUrl"/>
+								<img v-if="item.articleUrl" :src="item.articleUrl" :alt="item.articleTitle"/>
 								<p>{{item.articleContent}}</p>
 							</div>
 						</article>
@@ -155,6 +155,15 @@
 <script>
 	import mNetUtils from "~/static/js/myajax.js"
 	export default {
+		head () {
+			return {
+				title: "轻松一下-段子",
+				meta: [
+					{ hid: 'keywords', name: 'keywords', content:mNetUtils.getContent(this.items)},
+					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+				]
+			}
+		},
 		data() {
 			return {
 				ps: 10,

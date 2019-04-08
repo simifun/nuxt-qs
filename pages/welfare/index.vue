@@ -38,7 +38,7 @@
 							<a href="javascript:;">微信小程序 <i class="fa fa-angle-down"></i></a>
 							<ul class="sub-menu">
 								<li>
-									<a class="sns-wechat" href="javascript:;" title="微信小程序" data-src="/image/wxapp.jpg">扫码体验</a>
+									<a class="sns-wechat" href="javascript:;" title="微信小程序" data-src="/image/wxapp.jpg" data-alt="微信小程序码">扫码体验</a>
 								</li>
 							</ul>
 						</li>
@@ -99,7 +99,7 @@
 									<p>打开微信扫一扫<br>体验小程序版<br>内容同步更新!</p>
 								</li>
 								<li style="float: left;width: 50%;">
-									<img src="/image/wxapp.jpg" style="width: 80%;">
+									<img src="/image/wxapp.jpg" style="width: 80%;" alt="扫码加我微信">
 								</li>
 							</ul>
 						</li>
@@ -176,12 +176,13 @@
 		},
 		head () {
 			return {
+				title: '美女福利',
 				meta: [
 					{ hid: 'description', name: 'description', content:"妹子图均来自gank.io！如果生活没有妹子，便只剩苟且！"}
 				],
-			  link: [
+			    link: [
 					{ rel: 'stylesheet', type: 'text/css', href: '/css/gankio.css' },
-			  ]
+				]
 			}
 		},
 		methods:{

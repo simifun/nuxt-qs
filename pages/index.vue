@@ -38,7 +38,7 @@
 							<a href="javascript:;">微信小程序 <i class="fa fa-angle-down"></i></a>
 							<ul class="sub-menu">
 								<li>
-									<a class="sns-wechat" href="javascript:;" title="微信小程序" data-src="/image/wxapp.jpg">扫码体验</a>
+									<a class="sns-wechat" href="javascript:;" title="微信小程序" data-src="/image/wxapp.jpg" data-alt="微信小程序码">扫码体验</a>
 								</li>
 							</ul>
 						</li>
@@ -65,13 +65,13 @@
 						</ol>
 						<div class="carousel-inner" role="listbox">
 							<div class="item">
-								<a target="_blank" href="https://qsong.fun"><img src="/image/Banner_woniu.jpg"></a>
+								<a target="_blank" href="https://www.qsong.fun"><img src="/image/Banner_woniu.jpg" alt="首页图片"></a>
 							</div>
 							<div class="item active">
-								<a target="_blank" href="https://qsong.fun"><img src="/image/Banner_guangyingshuihua.jpg"></a>
+								<a target="_blank" href="https://www.qsong.fun"><img src="/image/Banner_guangyingshuihua.jpg" alt="首页图片"></a>
 							</div>
 							<div class="item">
-								<a target="_blank" href="https://qsong.fun"><img src="/image/Banner_weimei.jpg"></a>
+								<a target="_blank" href="https://www.qsong.fun"><img src="/image/Banner_weimei.jpg" alt="首页图片"></a>
 							</div>
 						</div>
 						<a class="left carousel-control" href="#focusslide" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
@@ -103,14 +103,13 @@
 					</div>
 					<div id="uptodatelist">
 						<article class="excerpt excerpt-1" v-for="(item,index) in uptodatelist">
-							<a target="_blank" class="focus" :href="item.href"><img :src="item.articleImg" class="thumb" style="display: inline;"></a>
+							<a target="_blank" class="focus" :href="item.href"><img :src="item.articleImg" :alt="item.articleTitle" class="thumb" style="display: inline;"></a>
 							<header>
 								<a class="cat" v-cloak>{{item.typeName}}<i></i></a>
 								<h2><a target="_blank" :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2>
 							</header>
 							<p class="meta"><time v-cloak><i class="fa fa-clock-o"></i>{{item.publishTime}}</time><span class="pv" v-cloak><i
 									 class="fa fa-eye"></i>阅读({{item.readTime}})</span>
-								<!--<a class="pc" href="https://qsong.fun/754.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a>-->
 								<a href="javascript:" onclick="postlike(event)" class="post-like" v-bind:pid="item.articleId"><i class="fa fa-thumbs-o-up"></i>赞(<span
 									 v-cloak>{{item.niceNum}}</span>)</a>
 							</p>
@@ -118,7 +117,7 @@
 						</article>
 					</div>
 					<div id="loader" class="ias_loader" style="display: none;">
-						<div class="pagination-loading"><img src="/image/loading.gif"></div>
+						<div class="pagination-loading"><img src="/image/loading.gif" alt="加载中..."></div>
 					</div>
 					<div id="nomore" class="ias_loader" style="display: none;">
 						<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a><strong>没有更多啦！</strong></div>
@@ -205,7 +204,7 @@
 			<ul>
 				<li class="rollbar-qrcode">
 					<a href="javascript:;"><i class="fa fa-qrcode"></i><span>微信咨询</span></a>
-					<h6>微信咨询<img src="/image/wxqrcode.png"><i></i></h6>
+					<h6>微信咨询<img src="/image/wxqrcode.png" alt="扫我添加微信"><i></i></h6>
 				</li>
 				<li>
 					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=917437934&site=qq&menu=yes"><i class="fa fa-qq"></i><span>QQ咨询</span></a>
