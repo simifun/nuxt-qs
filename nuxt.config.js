@@ -8,7 +8,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: '轻松一下|GIF搞笑图片,视频,段子集中营',
+    title: '轻松一下 | GIF搞笑图片,视频,段子集中营',
     meta: [
 		{ charset: 'utf-8' },
 		{ 'http-equiv':'X-UA-Compatible',content:'IE=11,IE=10,IE=9,IE=8'},
