@@ -4,7 +4,7 @@ if(!window.console) {
 	}
 }
 
-var SERVER_URL = "https://qsong.fun"
+var SERVER_URL = "https://www.qsong.fun"
 
 /*!
  * jQuery resizeend - A jQuery plugin that allows for window resize-end event handling.
@@ -509,9 +509,9 @@ function postlike(e) {
 			}
 		}
 	}
-	var url = 'https://qsong.fun/article/postAddNice',data = {articleId: pid}
+	var url = SERVER_URL + '/article/postAddNice',data = {articleId: pid}
 	if('word' === type){
-		url = 'https://qsong.fun/word/postAddNice';
+		url = SERVER_URL + '/word/postAddNice';
 		data = {id: pid};
 	};
 	$.ajax({

@@ -161,12 +161,6 @@
 						</li>
 					</ul>
 				</div>
-				<div class="widget widget_ui_asb" style="top: 0px;">
-					<div class="item" v-for="item in videoItems">
-						<a :href="item.href" target="_blank"><img :src="item.articleImg"></a>
-						<div class="videoTitle"><i class="fa fa-play-circle-o"></i>{{item.articleTitle}}</div>
-					</div>
-				</div>
 				<div class="widget widget_ui_posts">
 					<h3 @click="refRandList($event)">随机推荐&nbsp;&nbsp;<i class="fa fa-refresh"></i></h3>
 					<ul class="nopic">
@@ -175,6 +169,12 @@
 								 v-cloak>{{item.publishTime}}</span></a>
 						</li>
 					</ul>
+				</div>
+				<div class="widget widget_ui_asb" style="top: 0px;">
+					<div class="item" v-for="item in videoItems">
+						<a :href="item.href" target="_blank"><img :src="item.articleImg"></a>
+						<div class="videoTitle"><i class="fa fa-play-circle-o"></i>{{item.articleTitle}}</div>
+					</div>
 				</div>
 				<div id="" class="widget widget_ui_statistics" style="top: 0px;">
 					<h3>网站统计</h3>
@@ -187,6 +187,12 @@
 						<li v-cloak><strong>获赞总数：</strong>{{countInfo.c_nice}}</li>
 						<li v-cloak><strong>最后更新：</strong>{{countInfo.publish_time}}</li>
 					</ul>
+				</div>
+				<div class="widget widget_ui_tags">
+					<h3>友情链接</h3>
+					<div class="items">
+						<a href="https://blog.qsong.fun" target="_blank" style="background:#3366FF; opacity: 0.6;">Simi</a>
+					</div>
 				</div>
 			</div>
 		</section>

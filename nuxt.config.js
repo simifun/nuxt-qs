@@ -61,7 +61,7 @@ module.exports = {
 		'@nuxtjs/axios'
   ],
 	axios: {
-    baseURL: 'http://www.qsong.fun',
+    baseURL: 'https://www.qsong.fun',
     // or other axios configs.
   },
   /*
