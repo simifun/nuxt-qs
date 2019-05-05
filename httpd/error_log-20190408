@@ -1,0 +1,101 @@
+[Sun Mar 31 03:35:02.067103 2019] [auth_digest:notice] [pid 19318] AH01757: generating secret for digest authentication ...
+[Sun Mar 31 03:35:02.114991 2019] [lbmethod_heartbeat:notice] [pid 19318] AH02282: No slotmem from mod_heartmonitor
+[Sun Mar 31 03:35:02.736969 2019] [mpm_prefork:notice] [pid 19318] AH00163: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16 configured -- resuming normal operations
+[Sun Mar 31 03:35:02.736992 2019] [core:notice] [pid 19318] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Sun Mar 31 04:54:31.524614 2019] [proxy:warn] [pid 26491] [client 92.118.160.49:50723] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Sun Mar 31 10:56:47.258160 2019] [proxy:warn] [pid 26928] [client 185.173.35.17:49509] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Sun Mar 31 16:21:19.674168 2019] [proxy:warn] [pid 26924] [client 185.173.35.57:52833] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Mon Apr 01 00:03:40.530734 2019] [proxy:warn] [pid 27681] [client 185.173.35.17:56493] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Mon Apr 01 02:14:48.986505 2019] [proxy:warn] [pid 27681] [client 178.73.215.171:1834] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Mon Apr 01 09:57:50.614172 2019] [proxy:warn] [pid 28554] [client 92.118.160.13:57828] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Mon Apr 01 10:57:30.011421 2019] [proxy:warn] [pid 28711] [client 77.247.109.70:55779] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /robots.txt
+[Mon Apr 01 11:23:17.555430 2019] [mpm_prefork:notice] [pid 19318] AH00170: caught SIGWINCH, shutting down gracefully
+[Mon Apr 01 11:23:18.644970 2019] [suexec:notice] [pid 29087] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Mon Apr 01 11:23:18.654795 2019] [so:warn] [pid 29087] AH01574: module expires_module is already loaded, skipping
+[Mon Apr 01 11:23:18.656197 2019] [so:warn] [pid 29087] AH01574: module rewrite_module is already loaded, skipping
+[Mon Apr 01 11:23:18.669442 2019] [so:warn] [pid 29087] AH01574: module ssl_module is already loaded, skipping
+[Mon Apr 01 11:23:18.673197 2019] [auth_digest:notice] [pid 29087] AH01757: generating secret for digest authentication ...
+[Mon Apr 01 11:23:18.674626 2019] [lbmethod_heartbeat:notice] [pid 29087] AH02282: No slotmem from mod_heartmonitor
+[Mon Apr 01 11:23:18.741466 2019] [mpm_prefork:notice] [pid 29087] AH00163: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16 configured -- resuming normal operations
+[Mon Apr 01 11:23:18.741500 2019] [core:notice] [pid 29087] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Mon Apr 01 18:54:52.985018 2019] [proxy:warn] [pid 29274] [client 93.113.125.89:44444] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Mon Apr 01 20:36:00.955033 2019] [proxy:warn] [pid 29326] [client 211.94.162.245:49841] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Tue Apr 02 01:39:27.634887 2019] [proxy:warn] [pid 30056] [client 27.109.151.73:35301] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Tue Apr 02 04:53:15.862709 2019] [proxy:warn] [pid 30056] [client 58.248.203.53:47236] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Tue Apr 02 04:53:15.864535 2019] [proxy_http:error] [pid 30056] (20014)Internal error: [client 58.248.203.53:47236] AH01102: error reading status line from remote server localhost:8009
+[Tue Apr 02 04:53:15.864596 2019] [proxy:error] [pid 30056] [client 58.248.203.53:47236] AH00898: Error reading from remote server returned by /
+[Tue Apr 02 10:25:38.293503 2019] [proxy_http:error] [pid 29308] (20014)Internal error: [client 120.202.26.149:59387] AH01102: error reading status line from remote server localhost:8090
+[Tue Apr 02 10:25:38.333801 2019] [proxy:error] [pid 29308] [client 120.202.26.149:59387] AH00898: Error reading from remote server returned by /word/getWord
+[Tue Apr 02 10:32:50.945336 2019] [proxy_http:error] [pid 29298] (104)Connection reset by peer: [client 120.202.26.149:60012] AH01102: error reading status line from remote server localhost:8090, referer: http://localhost:8009/geng
+[Tue Apr 02 10:32:50.951964 2019] [proxy:error] [pid 29298] [client 120.202.26.149:60012] AH00898: Error reading from remote server returned by /word/getWord, referer: http://localhost:8009/geng
+[Tue Apr 02 10:32:50.945167 2019] [proxy_http:error] [pid 29326] (20014)Internal error: [client 120.202.26.149:60011] AH01102: error reading status line from remote server localhost:8090, referer: http://localhost:8009/geng
+[Tue Apr 02 10:32:50.952671 2019] [proxy:error] [pid 29326] [client 120.202.26.149:60011] AH00898: Error reading from remote server returned by /article/getRandArticle, referer: http://localhost:8009/geng
+[Tue Apr 02 10:32:58.845212 2019] [proxy:error] [pid 30055] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8090 (localhost) failed
+[Tue Apr 02 10:32:58.845350 2019] [proxy:error] [pid 30055] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s
+[Tue Apr 02 10:32:58.845366 2019] [proxy_http:error] [pid 30055] [client 120.202.26.149:60027] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost:8009/geng
+[Tue Apr 02 10:32:58.846931 2019] [proxy:error] [pid 29301] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8090 (localhost) failed
+[Tue Apr 02 10:32:58.847029 2019] [proxy:error] [pid 29301] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s
+[Tue Apr 02 10:32:58.847042 2019] [proxy_http:error] [pid 29301] [client 120.202.26.149:60028] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost:8009/geng
+[Tue Apr 02 10:33:00.495593 2019] [proxy:error] [pid 29308] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8090 (localhost) failed
+[Tue Apr 02 10:33:00.495727 2019] [proxy:error] [pid 29308] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s
+[Tue Apr 02 10:33:00.495738 2019] [proxy_http:error] [pid 29308] [client 120.202.26.149:60031] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost:8009/geng
+[Tue Apr 02 10:33:00.496364 2019] [proxy:error] [pid 30056] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8090 (localhost) failed
+[Tue Apr 02 10:33:00.496443 2019] [proxy:error] [pid 30056] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s
+[Tue Apr 02 10:33:00.496453 2019] [proxy_http:error] [pid 30056] [client 120.202.26.149:60030] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost:8009/geng
+[Tue Apr 02 10:33:01.835537 2019] [proxy:error] [pid 30298] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8090 (localhost) failed
+[Tue Apr 02 10:33:01.835737 2019] [proxy:error] [pid 30298] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s
+[Tue Apr 02 10:33:01.835759 2019] [proxy_http:error] [pid 30298] [client 120.202.26.149:60035] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost:8009/geng
+[Tue Apr 02 10:33:01.836402 2019] [proxy:error] [pid 30299] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8090 (localhost) failed
+[Tue Apr 02 10:33:01.836525 2019] [proxy:error] [pid 30299] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s
+[Tue Apr 02 10:33:01.836539 2019] [proxy_http:error] [pid 30299] [client 120.202.26.149:60034] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost:8009/geng
+[Tue Apr 02 10:33:02.911320 2019] [proxy:error] [pid 29473] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8090 (localhost) failed
+[Tue Apr 02 10:33:02.911485 2019] [proxy:error] [pid 29473] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s
+[Tue Apr 02 10:33:02.911501 2019] [proxy_http:error] [pid 29473] [client 120.202.26.149:60042] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost:8009/geng
+[Tue Apr 02 10:33:02.913028 2019] [proxy:error] [pid 29274] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8090 (localhost) failed
+[Tue Apr 02 10:33:02.913106 2019] [proxy:error] [pid 29274] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s
+[Tue Apr 02 10:33:02.913114 2019] [proxy_http:error] [pid 29274] [client 120.202.26.149:60041] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost:8009/geng
+[Tue Apr 02 10:34:32.958234 2019] [proxy:error] [pid 29326] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8090 (localhost) failed
+[Tue Apr 02 10:34:32.958345 2019] [proxy:error] [pid 29326] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s
+[Tue Apr 02 10:34:32.958355 2019] [proxy_http:error] [pid 29326] [client 120.202.26.149:60166] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost:8009/geng
+[Tue Apr 02 10:34:32.962843 2019] [proxy:error] [pid 29298] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8090 (localhost) failed
+[Tue Apr 02 10:34:32.962881 2019] [proxy:error] [pid 29298] AH00959: ap_proxy_connect_backend disabling worker for (localhost) for 60s
+[Tue Apr 02 10:34:32.962890 2019] [proxy_http:error] [pid 29298] [client 120.202.26.149:60167] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost:8009/geng
+[Tue Apr 02 13:24:25.976611 2019] [proxy:warn] [pid 2216] [client 216.245.197.254:53374] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /robots.txt
+[Wed Apr 03 05:02:35.022854 2019] [proxy:warn] [pid 2376] [client 69.162.127.162:57038] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /robots.txt
+[Wed Apr 03 10:55:39.003430 2019] [proxy:warn] [pid 3741] [client 106.15.76.85:57660] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Wed Apr 03 19:35:47.682373 2019] [proxy:warn] [pid 4770] [client 173.82.170.93:50682] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Wed Apr 03 19:36:50.261892 2019] [proxy:warn] [pid 4830] [client 216.245.197.254:64174] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /robots.txt
+[Wed Apr 03 19:46:54.266841 2019] [proxy:warn] [pid 4840] [client 47.97.16.6:54726] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Wed Apr 03 20:22:05.670145 2019] [proxy:warn] [pid 4770] [client 173.82.170.93:44710] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Wed Apr 03 20:42:43.213006 2019] [proxy:warn] [pid 4770] [client 221.13.12.96:43324] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Wed Apr 03 20:42:43.214521 2019] [proxy_http:error] [pid 4770] (20014)Internal error: [client 221.13.12.96:43324] AH01102: error reading status line from remote server localhost:8009
+[Wed Apr 03 20:42:43.214583 2019] [proxy:error] [pid 4770] [client 221.13.12.96:43324] AH00898: Error reading from remote server returned by /
+[Wed Apr 03 20:45:08.002027 2019] [proxy:warn] [pid 4808] [client 173.82.170.93:57358] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Wed Apr 03 22:05:13.273741 2019] [proxy:warn] [pid 5066] [client 119.23.138.247:52876] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Wed Apr 03 22:06:31.568172 2019] [proxy:warn] [pid 4689] [client 185.173.35.21:50771] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Thu Apr 04 00:36:04.932995 2019] [proxy:warn] [pid 5065] [client 173.82.170.93:32896] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Thu Apr 04 01:06:09.670790 2019] [proxy:warn] [pid 4808] [client 173.82.170.93:33384] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Thu Apr 04 01:19:41.564093 2019] [proxy:warn] [pid 4839] [client 173.82.170.93:44582] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Thu Apr 04 03:56:08.059579 2019] [proxy:warn] [pid 4839] [client 47.96.254.10:52856] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Thu Apr 04 10:26:27.434507 2019] [proxy:warn] [pid 5675] [client 106.15.76.92:37566] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Thu Apr 04 16:00:14.400858 2019] [proxy:warn] [pid 5961] [client 47.94.52.159:41896] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Thu Apr 04 17:29:04.532029 2019] [proxy:warn] [pid 6692] [client 202.61.87.140:39682] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Thu Apr 04 17:29:12.616959 2019] [proxy:warn] [pid 6966] [client 202.61.87.140:40512] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Thu Apr 04 21:09:33.360831 2019] [proxy:warn] [pid 6974] [client 47.100.130.114:43770] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Thu Apr 04 23:11:49.759344 2019] [proxy:warn] [pid 6974] [client 47.97.10.19:58104] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Fri Apr 05 18:17:03.322507 2019] [proxy:warn] [pid 5954] [client 121.57.225.172:41264] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Fri Apr 05 18:17:03.323599 2019] [proxy_http:error] [pid 5954] (20014)Internal error: [client 121.57.225.172:41264] AH01102: error reading status line from remote server localhost:8009
+[Fri Apr 05 18:17:03.323638 2019] [proxy:error] [pid 5954] [client 121.57.225.172:41264] AH00898: Error reading from remote server returned by /
+[Fri Apr 05 19:32:54.949688 2019] [proxy:warn] [pid 5954] [client 216.245.197.254:53726] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /robots.txt
+[Sat Apr 06 01:10:16.820808 2019] [proxy:warn] [pid 8247] [client 47.93.180.168:53856] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Sat Apr 06 05:07:29.470239 2019] [proxy:warn] [pid 6694] [client 120.55.13.109:49672] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Sat Apr 06 06:26:20.661136 2019] [proxy:warn] [pid 6692] [client 196.52.43.91:62170] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Sat Apr 06 11:48:29.801590 2019] [proxy:warn] [pid 5961] [client 120.55.13.109:60408] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Sat Apr 06 23:49:19.173537 2019] [proxy:warn] [pid 6980] [client 173.82.170.93:44390] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Sun Apr 07 03:44:46.901755 2019] [proxy:warn] [pid 10144] [client 39.107.14.208:52146] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Sun Apr 07 09:05:37.185791 2019] [proxy:warn] [pid 9676] [client 106.15.76.92:56542] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Mon Apr 08 01:27:08.147591 2019] [proxy:warn] [pid 9701] [client 47.52.210.140:50826] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be www.qsong.fun for uri /
+[Mon Apr 08 03:17:01.443049 2019] [mpm_prefork:notice] [pid 29087] AH00171: Graceful restart requested, doing restart
+[Mon Apr 08 03:17:01.559371 2019] [so:warn] [pid 29087] AH01574: module expires_module is already loaded, skipping
+[Mon Apr 08 03:17:01.560413 2019] [so:warn] [pid 29087] AH01574: module rewrite_module is already loaded, skipping
+[Mon Apr 08 03:17:01.572100 2019] [so:warn] [pid 29087] AH01574: module ssl_module is already loaded, skipping

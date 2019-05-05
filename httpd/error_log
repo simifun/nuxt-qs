@@ -1,0 +1,47 @@
+[Mon Apr 22 03:48:01.888696 2019] [auth_digest:notice] [pid 3655] AH01757: generating secret for digest authentication ...
+[Mon Apr 22 03:48:01.890141 2019] [lbmethod_heartbeat:notice] [pid 3655] AH02282: No slotmem from mod_heartmonitor
+[Mon Apr 22 03:48:02.048628 2019] [mpm_prefork:notice] [pid 3655] AH00163: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16 configured -- resuming normal operations
+[Mon Apr 22 03:48:02.048654 2019] [core:notice] [pid 3655] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Mon Apr 22 05:23:27.154705 2019] [proxy:warn] [pid 10239] [client 47.52.210.38:50100] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be qsong.fun for uri /
+[Mon Apr 22 16:05:48.232821 2019] [proxy_http:error] [pid 10665] (20014)Internal error: [client 59.36.132.222:51244] AH01102: error reading status line from remote server localhost:8009
+[Mon Apr 22 16:05:48.232875 2019] [proxy:error] [pid 10665] [client 59.36.132.222:51244] AH00898: Error reading from remote server returned by /
+[Mon Apr 22 23:31:17.057692 2019] [proxy_http:error] [pid 11032] (20014)Internal error: [client 59.36.132.222:42247] AH01102: error reading status line from remote server localhost:8009
+[Mon Apr 22 23:31:17.057770 2019] [proxy:error] [pid 11032] [client 59.36.132.222:42247] AH00898: Error reading from remote server returned by /
+[Tue Apr 23 03:46:20.660253 2019] [proxy:warn] [pid 10665] [client 185.173.35.1:52105] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be qsong.fun for uri /
+[Tue Apr 23 06:58:49.782821 2019] [proxy:warn] [pid 10446] [client 47.94.52.138:56418] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be qsong.fun for uri /
+[Tue Apr 23 08:48:42.152791 2019] [proxy_http:error] [pid 12210] (20014)Internal error: [client 59.36.132.222:33870] AH01102: error reading status line from remote server localhost:8009
+[Tue Apr 23 08:48:42.152860 2019] [proxy:error] [pid 12210] [client 59.36.132.222:33870] AH00898: Error reading from remote server returned by /
+[Tue Apr 23 09:03:06.347507 2019] [mpm_prefork:notice] [pid 3655] AH00170: caught SIGWINCH, shutting down gracefully
+[Tue Apr 23 09:03:07.437960 2019] [suexec:notice] [pid 12312] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Tue Apr 23 09:03:07.444109 2019] [so:warn] [pid 12312] AH01574: module expires_module is already loaded, skipping
+[Tue Apr 23 09:03:07.444906 2019] [so:warn] [pid 12312] AH01574: module rewrite_module is already loaded, skipping
+[Tue Apr 23 09:03:07.456434 2019] [so:warn] [pid 12312] AH01574: module ssl_module is already loaded, skipping
+[Tue Apr 23 09:03:07.460444 2019] [auth_digest:notice] [pid 12312] AH01757: generating secret for digest authentication ...
+[Tue Apr 23 09:03:07.462029 2019] [lbmethod_heartbeat:notice] [pid 12312] AH02282: No slotmem from mod_heartmonitor
+[Tue Apr 23 09:03:07.514136 2019] [mpm_prefork:notice] [pid 12312] AH00163: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16 configured -- resuming normal operations
+[Tue Apr 23 09:03:07.514164 2019] [core:notice] [pid 12312] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Tue Apr 23 09:21:24.601609 2019] [mpm_prefork:notice] [pid 12312] AH00170: caught SIGWINCH, shutting down gracefully
+[Tue Apr 23 09:21:25.669352 2019] [suexec:notice] [pid 12461] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Tue Apr 23 09:21:25.675843 2019] [so:warn] [pid 12461] AH01574: module expires_module is already loaded, skipping
+[Tue Apr 23 09:21:25.676785 2019] [so:warn] [pid 12461] AH01574: module rewrite_module is already loaded, skipping
+[Tue Apr 23 09:21:25.688650 2019] [so:warn] [pid 12461] AH01574: module ssl_module is already loaded, skipping
+[Tue Apr 23 09:21:25.692562 2019] [auth_digest:notice] [pid 12461] AH01757: generating secret for digest authentication ...
+[Tue Apr 23 09:21:25.694091 2019] [lbmethod_heartbeat:notice] [pid 12461] AH02282: No slotmem from mod_heartmonitor
+[Tue Apr 23 09:21:25.742797 2019] [mpm_prefork:notice] [pid 12461] AH00163: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16 configured -- resuming normal operations
+[Tue Apr 23 09:21:25.742826 2019] [core:notice] [pid 12461] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Tue Apr 23 10:26:50.730120 2019] [mpm_prefork:notice] [pid 12461] AH00170: caught SIGWINCH, shutting down gracefully
+[Tue Apr 23 10:26:51.799686 2019] [suexec:notice] [pid 12876] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Tue Apr 23 10:26:51.806131 2019] [so:warn] [pid 12876] AH01574: module expires_module is already loaded, skipping
+[Tue Apr 23 10:26:51.807018 2019] [so:warn] [pid 12876] AH01574: module rewrite_module is already loaded, skipping
+[Tue Apr 23 10:26:51.818833 2019] [so:warn] [pid 12876] AH01574: module ssl_module is already loaded, skipping
+[Tue Apr 23 10:26:51.822676 2019] [auth_digest:notice] [pid 12876] AH01757: generating secret for digest authentication ...
+[Tue Apr 23 10:26:51.824062 2019] [lbmethod_heartbeat:notice] [pid 12876] AH02282: No slotmem from mod_heartmonitor
+[Tue Apr 23 10:26:52.158662 2019] [mpm_prefork:notice] [pid 12876] AH00163: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16 configured -- resuming normal operations
+[Tue Apr 23 10:26:52.158721 2019] [core:notice] [pid 12876] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Tue Apr 23 12:22:38.105638 2019] [proxy_http:error] [pid 12884] (20014)Internal error: [client 221.13.12.70:30153] AH01102: error reading status line from remote server localhost:8009
+[Tue Apr 23 12:22:38.105691 2019] [proxy:error] [pid 12884] [client 221.13.12.70:30153] AH00898: Error reading from remote server returned by /
+[Tue Apr 23 12:22:40.251646 2019] [proxy_http:error] [pid 12886] (20014)Internal error: [client 36.5.178.167:3071] AH01102: error reading status line from remote server localhost:8009
+[Tue Apr 23 12:22:40.251698 2019] [proxy:error] [pid 12886] [client 36.5.178.167:3071] AH00898: Error reading from remote server returned by /
+[Tue Apr 23 12:22:40.741292 2019] [proxy_http:error] [pid 13030] (20014)Internal error: [client 101.249.224.148:20381] AH01102: error reading status line from remote server localhost:8009
+[Tue Apr 23 12:22:40.741369 2019] [proxy:error] [pid 13030] [client 101.249.224.148:20381] AH00898: Error reading from remote server returned by /
+[Tue Apr 23 15:19:42.629749 2019] [proxy:warn] [pid 13171] [client 165.227.153.226:61234] AH01092: no HTTP 0.9 request (with no host line) on incoming request and preserve host set forcing hostname to be qsong.fun for uri /

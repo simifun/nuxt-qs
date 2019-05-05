@@ -57,10 +57,11 @@
 				<div class="content">
 					<div class="catleader">
 						<h1>搜索结果</h1>
-						<div class="catleader-desc">本站采用全站搜索，如果下面列表中未出现您搜索的关键词，您可以点击查看详情。</div>
+						<div class="catleader-desc" v-if="items.length>0">本站采用全站搜索，如果下面列表中未出现您搜索的关键词，您可以点击查看详情。</div>
+						<div class="catleader-desc" v-else>没有找到相关内容，请更换关键词重新尝试。</div>
 					</div>
 					<div id='list'>
-						<article class="excerpt excerpt-1" v-for="(item,index) in items">
+						<article class="excerpt excerpt-1" v-for="(item,index) in items" >
 							<a target="_blank" class="focus" :href="item.href"><img :src="item.articleImg" :alt="item.articleTitle" class="thumb" style="display: inline;"></a>
 							<header>
 								<a class="cat" v-cloak>{{item.typeName}}<i></i></a>
@@ -196,7 +197,7 @@
 				app.$axios.$get('/article/getArticleList?ps=5&pn=1&type=notice'),
 			])
 			return {
-				items: mNetUtils.convert(itemsData.data.list),
+				items: itemsData.data ? mNetUtils.convert(itemsData.data.list):[],
 				randList: mNetUtils.convertRandList(randData.data.list),
 				noticeList: mNetUtils.convertHotList(nData.data.list),
 			}

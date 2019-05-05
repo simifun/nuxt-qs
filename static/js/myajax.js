@@ -1,4 +1,5 @@
 /*******my_ajax.js 网络请求部分开始******/
+var SERVER_HOST = 'https://www.qsong.fun'
 
 var mNetUtils = {
 	// 登录
@@ -132,15 +133,15 @@ var mNetUtils = {
 				item.publishTime = item.publishTime.split(" ")[0];
 				item.articleImg = mNetUtils.getImgUrl(item.articleImg);
 				if (item.typeName == "组图") {
-					item.href = "/picture/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/picture/detail/" + item.articleId;
 				} else if (item.typeName == "动图") {
-					item.href = "/gif/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/gif/detail/" + item.articleId;
 				} else if (item.typeName == "视频") {
-					item.href = "/video/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/video/detail/" + item.articleId;
 				} else if (item.typeName == "公告") {
-					item.href = "/notice/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/notice/detail/" + item.articleId;
 				} else {
-					item.href = "/jokes/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/jokes/detail/" + item.articleId;
 				}
 				items.push(item);
 			});
@@ -159,7 +160,7 @@ var mNetUtils = {
 			arrlist.forEach(function(item) {
 				item.publishTime = item.publishTime.split(" ")[0];
 				item.articleImg = mNetUtils.getImgUrl(item.articleImg);
-				item.href = "/video/detail/" + item.articleId;
+				item.href = SERVER_HOST + "/video/detail/" + item.articleId;
 				items.push(item);
 			});
 		}
@@ -173,7 +174,7 @@ var mNetUtils = {
 			pn--; */
 			return [];
 		}
-		arrlist[0].href = "/jokes/detail/" + arrlist[0].articleId
+		arrlist[0].href = SERVER_HOST + "/jokes/detail/" + arrlist[0].articleId
 		return arrlist;
 	},
 	
@@ -197,15 +198,15 @@ var mNetUtils = {
 					item.articleUrl = mNetUtils.getImgUrl(item.articleUrl);
 				}
 				if (item.typeName == "组图") {
-					item.href = "/picture/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/picture/detail/" + item.articleId;
 				} else if (item.typeName == "动图") {
-					item.href = "/gif/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/gif/detail/" + item.articleId;
 				} else if (item.typeName == "视频") {
-					item.href = "/video/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/video/detail/" + item.articleId;
 				} else if (item.typeName == "公告") {
-					item.href = "/notice/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/notice/detail/" + item.articleId;
 				} else {
-					item.href = "/jokes/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/jokes/detail/" + item.articleId;
 				}
 				items.push(item);
 			});
@@ -239,15 +240,15 @@ var mNetUtils = {
 				item.publishTime = item.publishTime.split(" ")[0];
 				item.articleImg = mNetUtils.getImgUrl(item.articleImg);
 				if (item.typeName == "组图") {
-					item.href = "/picture/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/picture/detail/" + item.articleId;
 				} else if (item.typeName == "动图") {
-					item.href = "/gif/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/gif/detail/" + item.articleId;
 				} else if (item.typeName == "视频") {
-					item.href = "/video/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/video/detail/" + item.articleId;
 				} else if (item.typeName == "公告") {
-					item.href = "/notice/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/notice/detail/" + item.articleId;
 				} else {
-					item.href = "/jokes/detail/" + item.articleId;
+					item.href = SERVER_HOST + "/jokes/detail/" + item.articleId;
 				}
 				items.push(item);
 			});
@@ -265,11 +266,11 @@ var mNetUtils = {
 		data.article.publishTime = data.article.publishTime.split(" ")[0];
 		if (data.lastArticle.articleId) {
 			data.lastArticle.publishTime = data.lastArticle.publishTime.split(" ")[0];
-			data.lastArticle.href = "/"+mNetUtils.getRoute(data.lastArticle.type) + "/detail/"  + data.lastArticle.articleId;
+			data.lastArticle.href = SERVER_HOST + "/"+mNetUtils.getRoute(data.lastArticle.type) + "/detail/"  + data.lastArticle.articleId;
 		}
 		if (data.nextArticle.articleId) {
 			data.nextArticle.publishTime = data.nextArticle.publishTime.split(" ")[0];
-			data.nextArticle.href = "/"+mNetUtils.getRoute(data.nextArticle.type) + "/detail/" + data.nextArticle.articleId;
+			data.nextArticle.href = SERVER_HOST + "/"+mNetUtils.getRoute(data.nextArticle.type) + "/detail/" + data.nextArticle.articleId;
 		}
 		return data;
 	},
@@ -282,11 +283,11 @@ var mNetUtils = {
 		data.article.publishTime = data.article.publishTime.split(" ")[0];
 		if (data.lastArticle.articleId) {
 			data.lastArticle.publishTime = data.lastArticle.publishTime.split(" ")[0];
-			data.lastArticle.href = "/"+mNetUtils.getRoute(data.lastArticle.type) + "/detail/" + data.lastArticle.articleId;
+			data.lastArticle.href = SERVER_HOST + "/"+mNetUtils.getRoute(data.lastArticle.type) + "/detail/" + data.lastArticle.articleId;
 		}
 		if (data.nextArticle.articleId) {
 			data.nextArticle.publishTime = data.nextArticle.publishTime.split(" ")[0];
-			data.nextArticle.href = "/"+mNetUtils.getRoute(data.nextArticle.type) + "/detail/" + data.nextArticle.articleId;
+			data.nextArticle.href = SERVER_HOST + "/"+mNetUtils.getRoute(data.nextArticle.type) + "/detail/" + data.nextArticle.articleId;
 		}
 		return data;
 	},
@@ -340,59 +341,12 @@ var mNetUtils = {
 			cMapEl = map.get(item.code);
 			cMapEl.list.push({
 				text: item.word,
-				href: '/geng/detail/'+item.id,
+				href: SERVER_HOST + '/geng/detail/'+item.id,
 			});
 			map.set(item.code,cMapEl);
 		});
 		return [...map.values()];
 	},
-	
-	getItems: function(){
-		var items = [];
-		for(var i=0;i<26;i++){
-			var code = String.fromCharCode(65+i);
-			var item = {
-				id: 'wo_'+code,
-				code: code,
-				list: [
-					{
-						text: '安利',
-						href: '/geng/detail/anli',
-					},{
-						text: '安利',
-						href: '/geng/detail/anli',
-					},{
-						text: '爱豆',
-						href: '/geng/detail/anli',
-					},{
-						text: '阿西吧',
-						href: '/geng/detail/anli',
-					},{
-						text: '奥利给',
-						href: '/geng/detail/anli',
-					},{
-						text: '奥斯卡颁奖大乌龙',
-						href: '/geng/detail/anli',
-					},{
-						text: '爱是一道光',
-						href: '/geng/detail/anli',
-					},{
-						text: '傲娇受',
-						href: '/geng/detail/anli',
-					},{
-						text: '按头小分队',
-						href: '/geng/detail/anli',
-					},{
-						text: '矮大紧',
-						href: '/geng/detail/anli',
-					}
-				]
-			};
-			items.push(item);
-		};
-		return items;
-	},
-
 }
 
 export default mNetUtils
