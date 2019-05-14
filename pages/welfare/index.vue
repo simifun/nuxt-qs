@@ -88,7 +88,7 @@
 					<ul class="widget-navcontent">
 						<li class="item item-01">
 							<ul>
-								<li v-for="item in noticeList"><time>{{item.publishTime}}</time>
+								<li v-for="item in noticeList" :key="item"><time>{{item.publishTime}}</time>
 									<a target="_blank" v-bind:href="item.href">{{item.articleTitle}}</a>
 								</li>
 							</ul>
@@ -115,7 +115,7 @@
 				<div class="widget widget_ui_posts">
 					<h3 @click="refRandList($event)">随机推荐&nbsp;&nbsp;<i class="fa fa-refresh"></i></h3>
 					<ul class="nopic">
-						<li v-for="(item,index) in randList">
+						<li v-for="(item,index) in randList" :key="index">
 							<a target="_blank" :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
 								 v-cloak>{{item.publishTime}}</span></a>
 						</li>
@@ -202,7 +202,7 @@
 			},
 			initView(data) {
 				for (var i = 0; i < data.length; i++) {
-					var chtml = '<li><p class="img-detail" data-src="' + data[i].url + '"><a ><img class="" src="' + data[i].url +
+					var chtml = '<li><p class="img-detail" data-src="' + data[i].url.replace(/https/, "http") + '"><a ><img class="" src="' + data[i].url.replace(/https/, "http") +
 						'"></a></p></li>';
 					if ($('.BoxLeft').height() < $('.BoxRight').height()) {
 						$('.BoxLeft').append(chtml);
