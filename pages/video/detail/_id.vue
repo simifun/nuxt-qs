@@ -154,7 +154,7 @@
 		},
 		head () {
 			return {
-				title: this.article.articleTitle,
+				title: this.article.articleTitle + " - 轻松一下soft",
 				meta: [
 					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
 				],

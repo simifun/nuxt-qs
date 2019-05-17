@@ -176,7 +176,7 @@
 		},
 		head () {
 			return {
-				title: '美女福利',
+				title: '美女福利 - 轻松一下soft',
 				meta: [
 					{ hid: 'description', name: 'description', content:"妹子图均来自gank.io！如果生活没有妹子，便只剩苟且！"}
 				],

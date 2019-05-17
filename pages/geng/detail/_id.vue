@@ -166,7 +166,7 @@
 		},
 		head () {
 			return {
-				title: this.word.word,
+				title: this.word.word + " - 梗百科 - 轻松一下soft",
 				meta: [
 					{ hid: 'description', name: 'description', content:this.word.word}
 				],

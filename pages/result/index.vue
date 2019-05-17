@@ -159,7 +159,7 @@
 	export default {
 		head () {
 			return {
-				title: '搜索结果',
+				title: '搜索结果 - 轻松一下soft',
 				meta: [
 					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
 				]

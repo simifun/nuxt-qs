@@ -172,7 +172,7 @@
 	export default {
 		head () {
 			return {
-				title: "小轻松梗百科",
+				title: "梗百科 - 轻松一下soft",
 				meta: [
 					{ hid: 'keywords', name: 'keywords', content:"文体两开花,养肥了再看,硬核,死亡把比粉色,人类的本质是复读机,是什么梗"},
 					{ hid: 'description', name: 'description', content:"小轻松梗百科"}

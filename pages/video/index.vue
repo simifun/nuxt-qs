@@ -158,7 +158,7 @@
 	export default {
 		head () {
 			return {
-				title: '轻松一下-视频',
+				title: '视频 - 轻松一下soft',
 				meta: [
 					{ hid: 'keywords', name:'keywords', content:mNetUtils.getContent(this.items)},
 					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
