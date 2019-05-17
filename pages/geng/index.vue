@@ -264,6 +264,9 @@
 	width: 32%;
 	line-height: 30px;
 	margin-left: 1.33%;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media (max-width:640px){
