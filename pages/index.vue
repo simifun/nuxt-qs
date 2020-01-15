@@ -128,21 +128,21 @@
 				<div class="widget widget-tops">
 					<ul class="widget-nav">
 						<!--首页公告栏添加推荐与联系我们模块-->
-						<li>网站公告</li>
-						<li class="active">小程序版</li>
+						<li class="active">网站公告</li>
+						<li>小程序版</li>
 						<li>联系我们</li>
 					</ul>
 
 					<ul class="widget-navcontent">
 						<!--首页公告栏添加推荐与联系我们模块-->
-						<li class="item item-01">
+						<li class="item item-01 active">
 							<ul>
 								<li v-for="item in noticeList"><time>{{item.publishTime}}</time>
 									<a target="_blank" v-bind:href="item.href">{{item.articleTitle}}</a>
 								</li>
 							</ul>
 						</li>
-						<li class="item item-03 active">
+						<li class="item item-03">
 							<ul>
 								<li style="float: left;width: 50%;padding: 32px 0;">
 									<p>打开微信扫一扫<br>体验小程序版<br>内容同步更新!</p>
