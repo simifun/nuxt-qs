@@ -135,7 +135,7 @@
 		</div>
 		<footer class="footer">
 			<div class="container">
-				<p>©&nbsp;2017&nbsp;-&nbsp;2018&nbsp;&nbsp;</p>
+				<p>©&nbsp;2020&nbsp;-&nbsp;2021&nbsp;&nbsp;</p>
 				<nuxt-link to="/">轻松一下</nuxt-link> &nbsp;|
 				<a href="http://www.miitbeian.gov.cn/">&nbsp;豫ICP备18031952号</a>
 			</div>
@@ -264,7 +264,6 @@
 					}]
 				};{0[(document.getElementsByTagName("head")[0] || body).appendChild(document.createElement("script")).src =
 					"/js/share.js?cdnversion=" + ~(-new Date() / 36e5)];}
-					
 					//点击放大图片，modal方式
 					$(".lightbox").on("click", "img", function () {
 						$('#modal-img').modal('toggle');

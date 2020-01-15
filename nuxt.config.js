@@ -24,6 +24,7 @@ module.exports = {
     ],
 		script: [
 			{src:'/js/jquery.min.js'},
+			{src: 'https://hm.baidu.com/hm.js?f8f08fbd9b2fb57c652dfb1569ab18b7'}, /*引入百度统计的js*/
 		],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -52,6 +53,7 @@ module.exports = {
   */
   plugins: [
 	// '~/plugins/axios'
+		'~/plugins/baiduGa.js', /*百度统计*/
   ],
 
   /*

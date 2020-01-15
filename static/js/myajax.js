@@ -327,7 +327,6 @@ var mNetUtils = {
 			return;
 		};
 		
-		console.log(data.length);
 		// return mNetUtils.getItems();
 		var map = new Map();
 		var cMapEl = {};
@@ -347,7 +346,6 @@ var mNetUtils = {
 			});
 			map.set(item.code,cMapEl);
 		});
-		
 		return [...map.values()];
 	},
 }

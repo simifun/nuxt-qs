@@ -126,7 +126,7 @@
 
 		<footer class="footer">
 			<div class="container">
-				<p>©&nbsp;2017&nbsp;-&nbsp;2018&nbsp;&nbsp;</p>
+				<p>©&nbsp;2020&nbsp;-&nbsp;2021&nbsp;&nbsp;</p>
 				<nuxt-link to="/">轻松一下</nuxt-link> &nbsp;|
 				<a href="http://www.miitbeian.gov.cn/">&nbsp;豫ICP备18031952号</a>
 			</div>
