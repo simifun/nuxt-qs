@@ -256,7 +256,7 @@
 					$this.removeClass("refreshRotate"); 
 				} else {   
 					$this.addClass("refreshRotate");  
-					this.$axios.$get(mNetUtils.GET_RANDARTICLE).then((res) => {
+					this.$axios.$get(mNetUtils.getRandArticle()).then((res) => {
 						this.randList = mNetUtils.convertRandList(res.data.list);
 					});
 					setTimeout(function() {

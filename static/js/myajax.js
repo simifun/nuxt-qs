@@ -25,14 +25,14 @@ var mNetUtils = {
 	WELFARE_LIST: 'https://gank.io/api/data/福利/',
 
 	getRootPath: function() {
-		//获取当前网址  
+		//获取当前网址
 		var curWwwPath = window.document.location.href;
 		//获取主机地址之后的目录，
 		var pathName = window.document.location.pathname;
 		var pos = curWwwPath.indexOf(pathName);
-		//获取主机地址，如： http://localhost:8081  
+		//获取主机地址，如： http://localhost:8081
 		var localhostPaht = curWwwPath.substring(0, pos);
-		//获取带"/"的项目名，如：/chuchai 
+		//获取带"/"的项目名，如：/chuchai
 		var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
 
 		return (localhostPaht);
@@ -177,7 +177,7 @@ var mNetUtils = {
 		arrlist[0].href = SERVER_HOST + "/jokes/detail/" + arrlist[0].articleId
 		return arrlist;
 	},
-	
+
 	convertCount: function(data) {
 		var countInfo = {};
 		countInfo = data;
@@ -291,7 +291,7 @@ var mNetUtils = {
 		}
 		return data;
 	},
-	
+
 	getRoute: function(type){
 		if(type == "gif"){
 			return "gif";
@@ -313,7 +313,7 @@ var mNetUtils = {
 			return "https://www.qsong.fun/img/" + url;
 		}
 	},
-	
+
 	getContent: function(items){
 		var contents = "";
 		items.forEach(function(item) {
@@ -321,12 +321,12 @@ var mNetUtils = {
 		});
 		return contents;
 	},
-	
+
 	convertWordList: function(data){
 		if(!data){
 			return;
 		};
-		
+
 		// return mNetUtils.getItems();
 		var map = new Map();
 		var cMapEl = {};
@@ -337,7 +337,7 @@ var mNetUtils = {
 				list : []
 			});
 		});
-		
+
 		data.forEach(function(item) {
 			cMapEl = map.get(item.code);
 			cMapEl.list.push({
@@ -348,6 +348,21 @@ var mNetUtils = {
 		});
 		return [...map.values()];
 	},
+  getRandArticle : function(){
+    return mNetUtils.GET_RANDARTICLE + "?id="+ mNetUtils.getUUID();
+  },
+  getUUID: function(){
+        var s = [];
+        var hexDigits = "0123456789abcdef";
+        for (var i = 0; i < 36; i++) {
+            s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+        }
+        s[14] = "4";  // bits 12-15 of the time_hi_and_version field to 0010
+        s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);  // bits 6-7 of the clock_seq_hi_and_reserved to 01
+        s[8] = s[13] = s[18] = s[23] = "-";
+        var uuid = s.join("");
+        return uuid;
+  }
 }
 
 export default mNetUtils
