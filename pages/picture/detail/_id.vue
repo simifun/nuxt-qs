@@ -110,7 +110,7 @@
 			</div>
 			<div id="sidebarInfo" class="sidebar">
 				<div class="widget widget_ui_posts">
-					<h3>随机推荐&nbsp;&nbsp;<i class="fa fa-refresh"></i></h3>
+					<h3 @click="refRandList($event)">随机推荐&nbsp;&nbsp;<i class="fa fa-refresh"></i></h3>
 					<ul class="nopic">
 						<li v-for="(item,index) in randList">
 							<a target="_blank" :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
