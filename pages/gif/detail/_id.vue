@@ -104,7 +104,7 @@
 						</div>
 					</div>
 					<div class="post-copyright">未经允许不得转载：<a href="https://qsong.fun">轻松一下</a> » <a href="#">{{article.articleTitle}}</a></div>
-	
+
 					<nav class="article-nav">
 						<span class="article-nav-prev">上一篇<br><a v-bind:href="lastArticle.href" rel="prev">{{lastArticle.articleTitle}}</a></span>
 						<span class="article-nav-next">下一篇<br><a v-bind:href="nextArticle.href" rel="next">{{nextArticle.articleTitle}}</a></span>
@@ -116,7 +116,7 @@
 			</div>
 			<div id="sidebarInfo" class="sidebar">
 				<div class="widget widget_ui_posts">
-					<h3 @click="refRandList($event)">随机推荐&nbsp;&nbsp;<i class="fa fa-refresh"></i></h3>
+          <h3>随机推荐&nbsp;&nbsp;<i @click="refRandList($event)" class="fa fa-refresh"></i></h3>
 					<ul class="nopic">
 						<li v-for="(item,index) in randList">
 							<a target="_blank" :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
@@ -201,7 +201,7 @@
 					$this.removeClass("refreshRotate"); 
 				} else {   
 					$this.addClass("refreshRotate");  
-					this.$axios.$get(mNetUtils.GET_RANDARTICLE).then((res) => {
+					this.$axios.$get(mNetUtils.getRandArticle()).then((res) => {
 						this.randList = mNetUtils.convertRandList(res.data.list);
 					});
 					setTimeout(function() {
@@ -269,12 +269,12 @@
 						$('#modal-img').modal('toggle');
 						document.getElementById("imgId").src = this.src;
 					});
-			
+
 					$('#modal-img').on('show.bs.modal', function () {
 						$(this).css('display', 'flex');
 					})
 		 	});
-		 }, 
+		 },
 	}
 </script>
 
