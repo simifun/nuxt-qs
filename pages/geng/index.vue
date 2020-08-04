@@ -104,7 +104,7 @@
 						<li class="item item-01 active">
 							<ul>
 								<li v-for="item in noticeList"><time>{{item.publishTime}}</time>
-									<a target="_blank" v-bind:href="item.href">{{item.articleTitle}}</a>
+									<a v-bind:href="item.href">{{item.articleTitle}}</a>
 								</li>
 							</ul>
 						</li>
@@ -131,7 +131,7 @@
 					<h3>随机推荐&nbsp;&nbsp;<i @click="refRandList($event)" class="fa fa-refresh"></i></h3>
 					<ul class="nopic">
 						<li v-for="(item,index) in randList">
-							<a target="_blank" :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
+							<a :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
 								 v-cloak>{{item.publishTime}}</span></a>
 						</li>
 					</ul>

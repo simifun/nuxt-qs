@@ -61,10 +61,10 @@
 					</div>
 					<div id='list'>
 						<article class="excerpt excerpt-1" v-for="(item,index) in items">
-							<a target="_blank" class="focus" :href="item.href"><img :src="item.articleImg" :alt="item.articleTitle" class="thumb" style="display: inline;"></a>
+							<a class="focus" :href="item.href"><img :src="item.articleImg" :alt="item.articleTitle" class="thumb" style="display: inline;"></a>
 							<header>
 								<a class="cat" v-cloak>{{item.typeName}}<i></i></a>
-								<h2><a target="_blank" :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2></header>
+								<h2><a :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2></header>
 							<p class="meta"><time v-cloak><i class="fa fa-clock-o"></i>{{item.publishTime}}</time><span class="pv" v-cloak><i class="fa fa-eye"></i>阅读({{item.readTime}})</span>
 								<a href="javascript:;" onclick="postlike(event)" class="post-like" v-bind:pid="item.articleId"><i class="fa fa-thumbs-o-up"></i>赞(<span v-cloak>{{item.niceNum}}</span>)</a>
 							</p>
@@ -90,7 +90,7 @@
 						<li class="item item-01 active">
 							<ul>
 								<li v-for="item in noticeList"><time>{{item.publishTime}}</time>
-									<a target="_blank" v-bind:href="item.href">{{item.articleTitle}}</a>
+									<a v-bind:href="item.href">{{item.articleTitle}}</a>
 								</li>
 							</ul>
 						</li>
@@ -117,7 +117,7 @@
 					<h3>随机推荐&nbsp;&nbsp;<i @click="refRandList($event)" class="fa fa-refresh"></i></h3>
 					<ul class="nopic">
 						<li v-for="(item,index) in randList">
-							<a target="_blank" :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
+							<a :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
 								 v-cloak>{{item.publishTime}}</span></a>
 						</li>
 					</ul>
@@ -229,15 +229,15 @@
 		 	this.$nextTick(function(){
 				that.items = that.items.concat([]);
 		 		$(window).scroll(function() {
-		 			var wScrollY = window.scrollY; // 当前滚动条top值  
+		 			var wScrollY = window.scrollY; // 当前滚动条top值
 		 			var wInnerH = window.innerHeight; // 设备窗口的高度
-		 			var bScrollH = document.body.scrollHeight; // body总高度   
+		 			var bScrollH = document.body.scrollHeight; // body总高度
 		 			if(!that.isloading && wScrollY + wInnerH >= bScrollH - 10) {
 		 				that.pullupRefresh();
 		 			}
 		 		});
 		 	})
-		 }, 
+		 },
 	}
 </script>
 

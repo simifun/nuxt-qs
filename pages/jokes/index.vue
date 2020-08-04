@@ -62,7 +62,7 @@
 					</div>
 					<div id='list'>
 						<article class="excerpt-minic" v-for="(item,index) in items">
-							<h2><a target="_blank" :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2>
+							<h2><a :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2>
 							<p class="meta"><time><i class="fa fa-clock-o"></i>{{item.publishTime}}</time><span class="pv"><i class="fa fa-eye"></i>阅读({{item.readTime}})</span><a href="javascript:;" onclick="postlike(event)" class="post-like" v-bind:pid="item.articleId"><i class="fa fa-thumbs-o-up"></i>赞(<span v-cloak>{{item.niceNum}}</span>)</a></p>
 							<div class="article-content">
 								<img v-if="item.articleUrl" :src="item.articleUrl" :alt="item.articleTitle"/>
@@ -89,7 +89,7 @@
 						<li class="item item-01 active">
 							<ul>
 								<li v-for="item in noticeList"><time>{{item.publishTime}}</time>
-									<a target="_blank" v-bind:href="item.href">{{item.articleTitle}}</a>
+									<a v-bind:href="item.href">{{item.articleTitle}}</a>
 								</li>
 							</ul>
 						</li>
@@ -113,10 +113,10 @@
 					</ul>
 				</div>
 				<div class="widget widget_ui_posts">
-					<h3 @click="refRandList($event)">随机推荐&nbsp;&nbsp;<i class="fa fa-refresh"></i></h3>
+					<h3>随机推荐&nbsp;&nbsp;<i @click="refRandList($event)" class="fa fa-refresh"></i></h3>
 					<ul class="nopic">
 						<li v-for="(item,index) in randList">
-							<a target="_blank" :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
+							<a :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
 								 v-cloak>{{item.publishTime}}</span></a>
 						</li>
 					</ul>

@@ -62,11 +62,11 @@
 						<div class="welfare-content">
 							<div class="twoRankedBox">
 								<ul class="BoxLeft">
-	
+
 								</ul>
-	
+
 								<ul class="BoxRight">
-	
+
 								</ul>
 							</div>
 						</div>
@@ -89,7 +89,7 @@
 						<li class="item item-01">
 							<ul>
 								<li v-for="item in noticeList" :key="item"><time>{{item.publishTime}}</time>
-									<a target="_blank" v-bind:href="item.href">{{item.articleTitle}}</a>
+									<a v-bind:href="item.href">{{item.articleTitle}}</a>
 								</li>
 							</ul>
 						</li>
@@ -116,14 +116,14 @@
 					<h3>随机推荐&nbsp;&nbsp;<i @click="refRandList($event)" class="fa fa-refresh"></i></h3>
 					<ul class="nopic">
 						<li v-for="(item,index) in randList" :key="index">
-							<a target="_blank" :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
+							<a :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
 								 v-cloak>{{item.publishTime}}</span></a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</section>
-		
+
 		<div class="modal fade" id="modal-img" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -133,7 +133,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<footer class="footer">
 			<div class="container">
 				<p>©&nbsp;2020&nbsp;-&nbsp;2021&nbsp;&nbsp;</p>
@@ -202,7 +202,7 @@
 			},
 			initView(data) {
 				for (var i = 0; i < data.length; i++) {
-					var chtml = '<li><p class="img-detail" data-src="' + data[i].url.replace(/https/, "http") + '"><a ><img class="" src="' + data[i].url.replace(/https/, "http") +
+					var chtml = '<li><p class="img-detail" data-src="' + data[i].url.replace(/https/, "http") + '"><a><img class="" src="' + data[i].url.replace(/https/, "http") +
 						'"></a></p></li>';
 					if ($('.BoxLeft').height() < $('.BoxRight').height()) {
 						$('.BoxLeft').append(chtml);
@@ -220,13 +220,13 @@
 						ps: this.ps,
 						pn: ++this.pn,
 					};
-					this.$axios.$get(mNetUtils.WELFARE_LIST + params.ps + "/" + params.pn).then((res) => {
+					this.$axios.$get(mNetUtils.WELFARE_LIST + "/page/" + params.pn + "/count/" + params.ps).then((res) => {
 						that.isloading = false;
 						$('#loader').attr('style','display: none;');
 						if(!res.results) {
 							$('#nomore').attr('style','');
 						}else{
-							that.initView(res.results);
+							that.initView(res.data);
 						}
 					});
 				}
@@ -244,30 +244,30 @@
 		 },
 		 mounted() {
 			let that = this;
-			this.$axios.$get(mNetUtils.WELFARE_LIST +"10/1").then((res) => {
-				that.initView(res.results);
+			this.$axios.$get(mNetUtils.WELFARE_LIST +"/page/1/count/10").then((res) => {
+				that.initView(res.data);
 			});
 		 	this.$nextTick(function(){
 		 		$(window).scroll(function() {
-		 			var wScrollY = window.scrollY; // 当前滚动条top值  
+		 			var wScrollY = window.scrollY; // 当前滚动条top值
 		 			var wInnerH = window.innerHeight; // 设备窗口的高度
-		 			var bScrollH = document.body.scrollHeight; // body总高度   
+		 			var bScrollH = document.body.scrollHeight; // body总高度
 		 			if(!that.isloading && wScrollY + wInnerH >= bScrollH - 10) {
 		 				that.pullupRefresh();
 		 			}
 		 		});
-				
+
 				//点击放大图片，modal方式
 				$(".twoRankedBox").on("click", "img", function() {
 					document.getElementById("imgId").src = this.src;
 					$('#modal-img').modal('toggle');
 				});
-	
+
 				$('#modal-img').on('show.bs.modal', function() {
 					$(this).css('display', 'flex');
 				});
 		 	})
-		 }, 
+		 },
 	}
 </script>
 

@@ -22,7 +22,7 @@ var mNetUtils = {
 	ADD_NICE:  '/article/postAddNice',
 	POST_IMG_ARTICLE:  '/article/postNewImgArticle',
 	// 获取福利列表
-	WELFARE_LIST: 'https://gank.io/api/data/福利/',
+	WELFARE_LIST: 'https://gank.io/api/v2/data/category/Girl/type/Girl',
 
 	getRootPath: function() {
 		//获取当前网址

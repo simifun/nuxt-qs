@@ -65,13 +65,13 @@
 						</ol>
 						<div class="carousel-inner" role="listbox">
 							<div class="item">
-								<a target="_blank" href="https://www.qsong.fun"><img src="/image/Banner_woniu.jpg" alt="首页图片"></a>
+								<a href="https://www.qsong.fun"><img src="/image/Banner_woniu.jpg" alt="首页图片"></a>
 							</div>
 							<div class="item active">
-								<a target="_blank" href="https://www.qsong.fun"><img src="/image/Banner_guangyingshuihua.jpg" alt="首页图片"></a>
+								<a href="https://www.qsong.fun"><img src="/image/Banner_guangyingshuihua.jpg" alt="首页图片"></a>
 							</div>
 							<div class="item">
-								<a target="_blank" href="https://www.qsong.fun"><img src="/image/Banner_weimei.jpg" alt="首页图片"></a>
+								<a href="https://www.qsong.fun"><img src="/image/Banner_weimei.jpg" alt="首页图片"></a>
 							</div>
 						</div>
 						<a class="left carousel-control" href="#focusslide" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
@@ -79,7 +79,7 @@
 					</div>
 					<div id="hotdz">
 						<article class="excerpt-minic excerpt-minic-index" v-for="item in dzItems">
-							<h2><a target="_blank" class="red" href="/jokes">【最新段子】</a> <a :href="item.href" v-cloak>{{item.articleTitle}}</a></h2>
+							<h2><a class="red" href="/jokes">【最新段子】</a> <a :href="item.href" v-cloak>{{item.articleTitle}}</a></h2>
 							<p class="note myellipsis-3" v-cloak>{{item.articleContent}}</p>
 						</article>
 					</div>
@@ -93,7 +93,7 @@
 								<li v-for="(item,index) in hotlist">
 									<p class="text-muted"><span class="post-comments" v-cloak>&nbsp;阅读 ({{item.readTime}})</span></p><span
 									 v-bind:class="item.classname" v-cloak>{{index+1}}</span>
-									<a target="_blank" :href="item.href" v-bind:title="item.articleTitle" v-cloak>{{item.articleTitle}}</a>
+									<a :href="item.href" v-bind:title="item.articleTitle" v-cloak>{{item.articleTitle}}</a>
 								</li>
 							</ul>
 						</div>
@@ -103,10 +103,10 @@
 					</div>
 					<div id="uptodatelist">
 						<article class="excerpt excerpt-1" v-for="(item,index) in uptodatelist">
-							<a target="_blank" class="focus" :href="item.href"><img :src="item.articleImg" :alt="item.articleTitle" class="thumb" style="display: inline;"></a>
+							<a class="focus" :href="item.href"><img :src="item.articleImg" :alt="item.articleTitle" class="thumb" style="display: inline;"></a>
 							<header>
 								<a class="cat" v-cloak>{{item.typeName}}<i></i></a>
-								<h2><a target="_blank" :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2>
+								<h2><a :href="item.href" :title="item.articleTitle" v-cloak>{{item.articleTitle}}</a></h2>
 							</header>
 							<p class="meta"><time v-cloak><i class="fa fa-clock-o"></i>{{item.publishTime}}</time><span class="pv" v-cloak><i
 									 class="fa fa-eye"></i>阅读({{item.readTime}})</span>
@@ -138,7 +138,7 @@
 						<li class="item item-01 active">
 							<ul>
 								<li v-for="item in noticeList"><time>{{item.publishTime}}</time>
-									<a target="_blank" v-bind:href="item.href">{{item.articleTitle}}</a>
+									<a v-bind:href="item.href">{{item.articleTitle}}</a>
 								</li>
 							</ul>
 						</li>
@@ -165,7 +165,7 @@
 					<h3>随机推荐&nbsp;&nbsp;<i @click="refRandList($event)" class="fa fa-refresh"></i></h3>
 					<ul class="nopic">
 						<li v-for="(item,index) in randList">
-							<a target="_blank" :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
+							<a :href="item.href"><span class="text" v-cloak>{{item.articleTitle}}</span><span class="muted"
 								 v-cloak>{{item.publishTime}}</span></a>
 						</li>
 					</ul>
@@ -308,15 +308,15 @@
 		 	this.$nextTick(function(){
 				that.uptodatelist = that.uptodatelist.concat([]);
 		 		$(window).scroll(function() {
-		 			var wScrollY = window.scrollY; // 当前滚动条top值  
+		 			var wScrollY = window.scrollY; // 当前滚动条top值
 		 			var wInnerH = window.innerHeight; // 设备窗口的高度
-		 			var bScrollH = document.body.scrollHeight; // body总高度   
+		 			var bScrollH = document.body.scrollHeight; // body总高度
 		 			if(!that.isloading && wScrollY + wInnerH >= bScrollH - 10) {
 		 				that.pullupRefresh();
 		 			}
 		 		});
 		 	})
-		 }, 
+		 },
 	}
 </script>
 
