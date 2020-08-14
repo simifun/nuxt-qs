@@ -160,8 +160,8 @@
 			return {
 				title: '组图 - 轻松一下soft',
 				meta: [
-					{ hid: 'keywords', name:'keywords', content:mNetUtils.getContent(this.items)},
-					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+					{ hid: 'keywords', name:'keywords', content: '搞笑图片,搞笑套图'},
+					{ hid: 'description', name: 'description', content:'收集当下流行的一些搞笑图片，静态图片有时也可以很有趣'}
 				]
 			}
 		},

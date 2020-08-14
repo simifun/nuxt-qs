@@ -72,6 +72,7 @@
 							<i class="fa fa-thumbs-o-up"></i>赞(<span>{{word.niceNum}}</span>)
 						</a>
 					</div>
+
 					<div class="action-share">
 						<div class="bdsharebuttonbox bdshare-button-style0-24" data-bd-bind="1539754168197">
 							<span>分享到：</span>
@@ -83,6 +84,9 @@
 							<a class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a>
 						</div>
 					</div>
+          <div class="post-actions" style="padding:0 0 0.9375rem 0;">
+          	<a href="javascript:;" style="color: #888;font-size: 10px;">喜欢本站的话记得“CTRL+D”一键收藏本站！下次摸鱼更方便哦～</a>
+          </div>
 					<div class="post-copyright">未经允许不得转载：<a href="https://qsong.fun">轻松一下</a> » <a href="#">{{article.articleTitle}}</a></div>
 
 					<!-- <nav class="article-nav">
@@ -168,7 +172,8 @@
 			return {
 				title: this.word.word + "是什么梗 - 梗百科 - 轻松一下soft",
 				meta: [
-					{ hid: 'description', name: 'description', content:this.word.word}
+					{ name: 'keywords', content: this.word.word}
+					// { hid: 'description', name: 'description', content: this.word.word}
 				],
 			  link: [
 				{ rel: 'modulepreload', as: 'script', href: '/js/share.js' },

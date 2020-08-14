@@ -231,7 +231,8 @@
 		head () {
 			return {
 				meta: [
-					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.uptodatelist)}
+          { name: 'keywords', content: '轻松一下,搞笑图片,搞笑gif,搞笑动图,搞笑动态图,笑话,段子,梗百科,流行语,网词' },
+					{ name: 'description', content: '轻松一下 | 精彩轻松的gif搞笑图片,视频,段子集中营 | 网络流行词扫盲专区-梗百科' }
 				]
 			}
 		},

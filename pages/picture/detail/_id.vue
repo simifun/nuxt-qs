@@ -97,6 +97,9 @@
 							<a class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a>
 						</div>
 					</div>
+          <div class="post-actions" style="padding:0 0 0.9375rem 0;">
+          	<a href="javascript:;" style="color: #888;font-size: 10px;">喜欢本站的话记得“CTRL+D”一键收藏本站！下次摸鱼更方便哦～</a>
+          </div>
 					<div class="post-copyright">未经允许不得转载：<a href="https://qsong.fun">轻松一下</a> » <a href="#">{{article.articleTitle}}</a></div>
 
 					<nav class="article-nav">
@@ -164,10 +167,10 @@
 		},
 		head () {
 			return {
-				title: this.article.articleTitle  + " - 轻松一下soft",
+				title: this.article.articleTitle  + " - 轻松一下",
 				meta: [
-					{ hid: 'keywords', name: 'keywords', content:mNetUtils.getContent(this.items)},
-					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+					{ name: 'keywords', content: this.article.articleTitle },
+					{ name: 'description', content: this.article.articleTitle }
 				],
 			  link: [
 				{ rel: 'modulepreload', as: 'script', href: '/js/share.js' },

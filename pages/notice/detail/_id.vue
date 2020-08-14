@@ -154,11 +154,11 @@
 		},
 		head () {
 			return {
-				title: this.article.articleTitle  + " - 轻松一下soft",
-				meta: [
-					{ hid: 'keywords', name: 'keywords', content:mNetUtils.getContent(this.items)},
-					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
-				],
+				title: this.article.articleTitle  + " - 轻松一下",
+				// meta: [
+				// 	{ name: 'keywords', content: mNetUtils.getContent(this.items)},
+				// 	{ name: 'description', content: mNetUtils.getContent(this.items)}
+				// ],
 			  link: [
 				{ rel: 'modulepreload', as: 'script', href: '/js/share.js' },
 				{ rel: 'stylesheet', type: 'text/css', href: '/css/share.css' },

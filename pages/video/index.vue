@@ -158,10 +158,10 @@
 	export default {
 		head () {
 			return {
-				title: '视频 - 轻松一下soft',
+				title: '视频 - 轻松一下',
 				meta: [
-					{ hid: 'keywords', name:'keywords', content:mNetUtils.getContent(this.items)},
-					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+					{ name: 'keywords', content: '搞笑视频,科普视频,短视频' },
+					{ name: 'description', content: "现在的年轻人闲来无事好像更喜欢看视频呢，搞笑短视频，科普短视频，本板块更新慢但内容很精彩" }
 				]
 			}
 		},

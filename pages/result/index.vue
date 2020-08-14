@@ -159,10 +159,10 @@
 	export default {
 		head () {
 			return {
-				title: '搜索结果 - 轻松一下soft',
-				meta: [
-					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
-				]
+				title: '搜索结果 - 轻松一下',
+				// meta: [
+				// 	{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+				// ]
 			}
 		},
 		data() {

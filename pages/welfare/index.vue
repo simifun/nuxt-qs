@@ -57,7 +57,7 @@
 				<div class="content">
 						<div class="catleader">
 							<h1>福利</h1>
-							<div class="catleader-desc">妹子图均来自gank.io！如果生活没有妹子，便只剩苟且！</div>
+							<div class="catleader-desc">高清图片，点击放大请细品(加载缓慢请稍等...)</div>
 						</div>
 						<div class="welfare-content">
 							<div class="twoRankedBox">
@@ -176,9 +176,10 @@
 		},
 		head () {
 			return {
-				title: '美女福利 - 轻松一下soft',
+				title: '美女福利 - 轻松一下',
 				meta: [
-					{ hid: 'description', name: 'description', content:"妹子图均来自gank.io！如果生活没有妹子，便只剩苟且！"}
+          { name: 'keywords', content:"美女,美女图片,福利,美女福利,高清美女,高清美女h"},
+					{ name: 'description', content:"如果生活没有妹子，便只剩苟且！"}
 				],
 			    link: [
 					{ rel: 'stylesheet', type: 'text/css', href: '/css/gankio.css' },
@@ -223,7 +224,7 @@
 					this.$axios.$get(mNetUtils.WELFARE_LIST + "/page/" + params.pn + "/count/" + params.ps).then((res) => {
 						that.isloading = false;
 						$('#loader').attr('style','display: none;');
-						if(!res.results) {
+						if(!res.data) {
 							$('#nomore').attr('style','');
 						}else{
 							that.initView(res.data);

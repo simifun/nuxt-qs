@@ -159,9 +159,10 @@
 	export default {
 		head () {
 			return {
-				title: "GIF动图 - 轻松一下soft",
+				title: "GIF动图 - 轻松一下",
 				meta: [
-					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+          { name: 'keywords', content:'搞笑gif,搞笑动图,搞笑动态图' },
+					{ name: 'description', content: '可以动的图片，可以带来更多的笑料啦' }
 				]
 			}
 		},

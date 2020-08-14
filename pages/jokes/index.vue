@@ -159,8 +159,8 @@
 			return {
 				title: "段子 - 轻松一下soft",
 				meta: [
-					{ hid: 'keywords', name: 'keywords', content:mNetUtils.getContent(this.items)},
-					{ hid: 'description', name: 'description', content:mNetUtils.getContent(this.items)}
+					{ name: 'keywords', content: '笑话,冷笑话,段子,短笑话,搞笑段子'},
+					{ name: 'description', content: '段子笑话，短短的文字带来的笑料也不少'}
 				]
 			}
 		},
@@ -228,15 +228,15 @@
 		 	this.$nextTick(function(){
 				that.items = that.items.concat([]);
 		 		$(window).scroll(function() {
-		 			var wScrollY = window.scrollY; // 当前滚动条top值  
+		 			var wScrollY = window.scrollY; // 当前滚动条top值
 		 			var wInnerH = window.innerHeight; // 设备窗口的高度
-		 			var bScrollH = document.body.scrollHeight; // body总高度   
+		 			var bScrollH = document.body.scrollHeight; // body总高度
 		 			if(!that.isloading && wScrollY + wInnerH >= bScrollH - 10) {
 		 				that.pullupRefresh();
 		 			}
 		 		});
 		 	})
-		 }, 
+		 },
 	}
 </script>
 

@@ -17,10 +17,10 @@ module.exports = {
 		{ name:'applicable-device',content:'pc,mobile'},
 		{ name:'MobileOptimized',content:'width'},
 		{ name:'HandheldFriendly',content:'true'},
-		//seo优化--关键词
-		{ name:'keywords',content:pkg.keywords},
-		//seo优化--简介
-		{ hid: 'description', name: 'description', content: pkg.description }
+		// //seo优化--关键词
+		// { name:'keywords',content:pkg.keywords},
+		// //seo优化--简介
+		// { hid: 'description', name: 'description', content: pkg.description }
     ],
 		script: [
 			{src:'/js/jquery.min.js'},
